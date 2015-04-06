@@ -1,21 +1,21 @@
-# Phase 3: Editing and Displaying Posts
+# Phase 3: Displaying Ride Collections
 
 ## Rails
 ### Models
 
 ### Controllers
+Api::RidesController (collection, show)
 
 ### Views
+* rides/show.json.jbuilder
 
 ## Backbone
 ### Models
 
 ### Collections
+* Rides
 
 ### Views
-* PostForm
+* RidesCollection
 
 ## Gems/Libraries
-* Filepicker
-* Markdown-js
-* Bootstrap Markdown

@@ -1,29 +1,27 @@
-# Phase 2: Viewing Blogs and Posts
+# Phase 2: Writing and Viewing Reviews (~1-2 days)
 
 ## Rails
 ### Models
+* Review
 
 ### Controllers
-Api::BlogsController (create, destroy, index, show)
-Api::PostsController (create, destroy, show, update)
+ReviewsController (create, destroy, show, update)
+Api::ReviewsController (create, destroy, show, update)
 
 ### Views
-* blogs/show.json.jbuilder
+
 
 ## Backbone
 ### Models
-* Blog (parses nested `posts` association)
-* Post
+* Review
+* Ride
 
 ### Collections
-* Blogs
-* Posts
+* Reviews
 
 ### Views
-* BlogForm
-* BlogShow (composite view, contains PostsIndex subview)
-* PostsIndex (composite view, contains PostsIndexItem subviews)
-* PostsIndexItem
-* PostShow
+* ReviewForm
+* ReviewShow
+* ReviewsIndex
 
 ## Gems/Libraries

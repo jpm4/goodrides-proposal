@@ -1,13 +1,16 @@
-# Phase 4: User Feeds
+# Phase 4: Phase 4: Searching, User Pages and "Want to Ride"
 
 ## Rails
 ### Models
+* Want
 
 ### Controllers
-Api::PostsController (feed)
+WantsController (create, destroy)
+Api::RidesController (search)
+Api::ReviewsController (search)
 
 ### Views
-posts/feed.json.jbuilder
+
 
 ## Backbone
 ### Models
@@ -15,6 +18,5 @@ posts/feed.json.jbuilder
 ### Collections
 
 ### Views
-* FeedShow (composite view, contains PostsIndex subview)
 
 ## Gems/Libraries

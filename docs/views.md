@@ -1,26 +1,26 @@
 # View Wireframes
 
-## New Session
-![new-session]
+## Landing Page
+![landing_page]
 
-## Feed Show (landing page)
-![feed-show]
+## Backbone RideCollection
+![bbride_collection]
 
-## Blog Show
-![blog-show]
+## Backbone ReviewShow
+![bbreview_show]
 
-## Post Show
-![post-show]
+## New Review
+![new_review]
 
-## Post Form
-![post-form]
+## Ride Show
+![ride_show]
 
-## Search Results
-![search-results]
+## User Show
+![user_show]
 
-[new-session]: ./wireframes/new_session.png
-[feed-show]: ./wireframes/feed_show.png
-[blog-show]: ./wireframes/blog_show.png
-[post-show]: ./wireframes/post_show.png
-[post-form]: ./wireframes/post_form.png
-[search-results]: ./wireframes/search_results.png
+[landing_page]: ./wireframes/landing_page.jpg
+[bbride_collection]: ./wireframes/bbride_collection.jpg
+[bbreview_show]: ./wireframes/bbreview_show.jpg
+[new_review]: ./wireframes/new_review.jpg
+[ride_show]: ./wireframes/ride_show.jpg
+[user_show]: ./wireframes/user_show.jpg
