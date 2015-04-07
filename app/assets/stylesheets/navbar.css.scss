@@ -1,12 +1,12 @@
-$bgDefault    : #4e7fb6;
-$bgHighlight  : #7b7aad;
-$colDefault   : #ecf0f1;
-$colHighlight : #ecdbff;
+$bgDefault    : lime;
+$bgHighlight  : black;
+$colDefault   : lime;
+$colHighlight : lime;
 
 .navbar-default {
-  background: linear-gradient(to bottom,#27709b 0,#24688f 100%);
+  background: linear-gradient(to bottom,lime 0,lime 100%);
   background-color: $bgDefault;
-  border-color: $bgHighlight;
+  border-color: black;
   .navbar-brand {
     color: $colDefault;
     &:hover, &:focus {

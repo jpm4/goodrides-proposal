@@ -4,8 +4,7 @@
 column name     | data type | details
 ----------------|-----------|-----------------------
 id              | integer   | not null, primary key
-email           | string    | not null, unique
-username        | string    | not null
+username        | string    | not null, unique
 password_digest | string    | not null
 session_token   | string    | not null, unique
 
@@ -14,7 +13,7 @@ column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
 name        | string    | not null
-description | text      | not null
+description | text      |
 image_url   | string    |
 
 ## reviews

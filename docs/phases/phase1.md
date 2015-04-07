@@ -6,13 +6,16 @@
 * Ride
 
 ### Controllers
-* UsersController (create, new)
+* UsersController (create, new, show)
 * SessionsController (create, new, destroy)
+* RidesController (show, index)
 
 ### Views
 * users/new.html.erb
+* users/:id/show.html.erb
 * session/new.html.erb
 * rides/:id/show.html.erb
+* rides/index.html.erb
 
 ## Backbone
 ### Models

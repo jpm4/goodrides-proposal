@@ -7,10 +7,10 @@
 ## Minimum Viable Product
 goodrides is a clone of goodreads built on Rails and Backbone. Users can:
 
-- [ ] Create accounts
-- [ ] Create sessions (log in)
-- [ ] View users
-- [ ] View rides
+- [x] Create accounts
+- [x] Create sessions (log in)
+- [x] View users
+- [x] View rides
 - [ ] Give rides a star rating
 - [ ] Display average star rating
 - [ ] Create ride reviews
