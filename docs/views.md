@@ -18,9 +18,9 @@
 ## User Show
 ![user_show]
 
-[landing_page]: ./wireframes/landing_page.jpg
-[bbride_collection]: ./wireframes/bbride_collection.jpg
-[bbreview_show]: ./wireframes/bbreview_show.jpg
-[new_review]: ./wireframes/new_review.jpg
-[ride_show]: ./wireframes/ride_show.jpg
-[user_show]: ./wireframes/user_show.jpg
+[landing_page]: ./wireframes/landing_page.JPG
+[bbride_collection]: ./wireframes/bbride_collection.JPG
+[bbreview_show]: ./wireframes/bbreview_show.JPG
+[new_review]: ./wireframes/new_review.JPG
+[ride_show]: ./wireframes/ride_show.JPG
+[user_show]: ./wireframes/user_show.JPG
