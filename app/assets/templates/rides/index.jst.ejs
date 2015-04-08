@@ -1,0 +1,13 @@
+<div class='rides-index-title'>
+  <h3>Rides</h3>
+</div>
+
+<ul class="rides">
+  <% rides.each(function (ride) { %>
+    <li>
+      <a href="/#/rides/<%= ride.id %>">
+        <%= ride.escape("name") %>
+      </a>
+    </li>
+  <% }); %>
+</ul>
