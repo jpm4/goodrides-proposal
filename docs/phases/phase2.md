@@ -18,10 +18,12 @@ Api::ReviewsController (create, destroy, show, update)
 
 ### Collections
 * Reviews
+* Rides
 
 ### Views
 * ReviewForm
 * ReviewShow
-* ReviewsIndex
+* RideShow
+* RideIndex
 
 ## Gems/Libraries
