@@ -1,11 +1,10 @@
 Rails.application.routes.draw do
-  get 'rides/show'
-
-  get 'rides/index'
-
   root to: "sessions#new"
 
-  resources :users
+  resources :users, only: [:show, :new, :create]
   resource :session
-  resources :rides
+
+  namespace :api, defaults: { format: :json } do
+    resources :rides, only: [:index, :show]
+  end
 end

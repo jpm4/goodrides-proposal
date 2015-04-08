@@ -4,7 +4,8 @@ window.Goodrides = {
   Views: {},
   Routers: {},
   initialize: function() {
-
+    new Goodrides.Routers.Router;
+    Backbone.history.start();
   }
 };
 
