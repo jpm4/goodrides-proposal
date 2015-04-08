@@ -28,6 +28,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bcrypt'
 gem 'bootstrap-sass'
 gem 'newrelic_rpm'
+gem 'backbone-on-rails'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
