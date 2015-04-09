@@ -1,10 +1,10 @@
 module Api
   class ReviewsController < ApiController
     def create
-      debugger
       @review = current_ride.reviews.new(review_params)
-
-
+      @review.user_id = current_user.id
+      debugger
+      
       if @review.save
         render json: @review
       else
@@ -25,7 +25,7 @@ module Api
         render json: @review
       else
         render json: @review.errors.full_messages, status: :unprocessable_entity
-      end   
+      end
     end
 
     private
@@ -40,7 +40,7 @@ module Api
     end
 
     def review_params
-      params.require(:review).permit(:star_rating, :title, :body)
+      params.require(:review).permit(:star_rating, :title, :ride_id, :body)
     end
   end
 end

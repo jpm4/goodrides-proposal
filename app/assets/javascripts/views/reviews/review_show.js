@@ -1,4 +1,4 @@
-Goodrides.Views.RideShow = Backbone.CompositeView.extend({
+Goodrides.Views.ReviewShow = Backbone.CompositeView.extend({
   template: JST['reviews/show'],
 
   className: 'review-display',
