@@ -13,8 +13,12 @@
 #
 
 class Review < ActiveRecord::Base
-  validates :user_id, :ride_id, :star_rating, presence: true
+  validates :user_id, :ride_id, presence: true
+  validates :star_rating, numericality: {
+    greater_than_or_equal_to: 0, less_than_or_equal_to: 5 }
 
   belongs_to :user
   belongs_to :ride
 end
+
+# TODO: Enforce star_rating constraint between 1-5 or 0-5

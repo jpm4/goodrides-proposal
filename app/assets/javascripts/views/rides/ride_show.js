@@ -32,6 +32,7 @@ Goodrides.Views.RideShow = Backbone.CompositeView.extend({
     var view = new Goodrides.Views.ReviewForm({
       collection: this.collection
     });
+    debugger
     this.addSubview('#review-form', view);
   }
 });

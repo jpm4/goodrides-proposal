@@ -20,9 +20,10 @@
               data-toggle="dropdown">
               <span class="glyphicon glyphicon-plus"></span>
             </button>
-          </li> -->
-          <li><%= button_to "Rides Index", '/#/rides', method: :get,
-            class: "btn btn-primary navbar-btn" %></li>
+          </li>
+          <li><%= button_to "Rides Index", '/#', method: :get,
+            class: "btn btn-primary navbar-btn" %></li> -->
+          <a class="btn btn-primary navbar-btn" href="#">Rides Index</a>
           <li><%= button_to "Sign Out", session_url, method: :delete,
             class: "btn btn-primary navbar-btn" %></li>
         <% else %>

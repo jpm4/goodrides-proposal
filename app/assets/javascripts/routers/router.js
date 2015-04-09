@@ -11,7 +11,7 @@ Goodrides.Routers.Router = Backbone.Router.extend({
   },
 
   ridesIndex: function () {
-   this.collection.fetch();
+    this.collection.fetch();
     var view = new Goodrides.Views.RidesIndex({
       collection: this.collection
     });
