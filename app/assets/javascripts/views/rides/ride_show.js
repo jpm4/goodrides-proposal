@@ -21,18 +21,57 @@ Goodrides.Views.RideShow = Backbone.CompositeView.extend({
     this.$el.html(content);
     this.renderReviews();
     this.renderReviewForm();
+    this.initializeStarPlugin();
     return this;
+  },
+
+  averageStarRating: function () {
+    var sum = 0;
+    this.collection.models.forEach (function (review) {
+      sum += review.attributes.star_rating;
+    });
+    return sum / this.collection.models.length;
+  },
+
+  initializeStarPlugin: function () {
+    var rating;
+    if (this.collection.models.length > 0) {
+      rating = this.averageStarRating();
+      this.$("#starDisplay").rateYo({
+        rating: rating,
+        readOnly: true
+      });
+      rating = +rating.toFixed(2);
+      this.$("#starDisplay").append('<h4>Average Rating: ' + rating + '</h4>');
+    } 
+
+//   .rateYo("option", "onChange", function () {
+//    
+//       var options = $rateYo.rateYo("option");
+//    
+//       var color = getColor(options);
+//    
+//       $rateYo.rateYo("option", "ratedFill", color);
+//     }).rateYo("option", "onSet", function () {
+//    
+//       /* get all options of the plugin */
+//       var options = $rateYo.rateYo("option");
+//    
+//       /* set the 'ratedFill' of the plugin dynamically */
+//       $rateYo.rateYo("option", "ratedFill", getColor(options));
+// }));
   },
 
   renderReviews: function () {
     this.model.reviews().each(this.addReview.bind(this));
   },
 
+
   renderReviewForm: function () {
     var view = new Goodrides.Views.ReviewForm({
       collection: this.collection
     });
-    debugger
     this.addSubview('#review-form', view);
+    // this.initializeStarPlugin();
   }
 });

@@ -13,7 +13,19 @@ Goodrides.Views.ReviewShow = Backbone.CompositeView.extend({
     });
     this.$el.html(content);
     this.$el.data('review-id', this.model.id);
-
+    this.initializeStarPlugin();
     return this;
+  },
+
+  initializeStarPlugin: function () {
+    var rating = this.model.attributes.star_rating;
+    this.$(".review-star-rating").rateYo({
+      rating: rating,
+      readOnly: true
+    });
+
+    this.$(".review-star-rating").append('<h4>Rating: ' + rating + '</h4>');
   }
+
+
 });
