@@ -14,6 +14,7 @@
  *= require_self
  *= require jquery.rateyo
  */
+ 
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
@@ -29,4 +30,6 @@ img {
 
 .btn-primary {
   background-color: black;
+  border-color: none;
+  margin-right: 1px;
 }

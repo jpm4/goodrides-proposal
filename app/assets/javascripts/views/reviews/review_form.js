@@ -1,30 +1,47 @@
 Goodrides.Views.ReviewForm = Backbone.CompositeView.extend({
   formTemplate: JST['reviews/form'],
   linkTemplate: JST['reviews/form_link'],
+  starTemplate: JST['reviews/stars'],
   formShowing: false,
 
-  initialize: function () {
-    debugger
-    this.$('.rateYo').rateYo({
-      rating: 3.5
-    });
-  },
-
-  create: function (event) {
-    event.preventDefault();
+  create: function (rating) {
     this.collection.create({
       ride_id: this.collection.ride.id,
-      star_rating: this.$('textarea').val()
-    }, { wait: true });
-    this.$('textarea').val('');
-    this.$('textarea').focus();
+      star_rating: rating
+    });
+    debugger
   },
 
+  edit: function () {
+
+  },
+
+  // create: function (event) {
+  //   event.preventDefault();
+  //   this.collection.create({
+  //     ride_id: this.collection.ride.id,
+  //     star_rating: this.$('textarea').val()
+  //   }, { wait: true });
+  //   this.$('textarea').val('');
+  //   this.$('textarea').focus();
+  // },
+// TODO: make initial create action that creates a review with
+// star_rating, then make the above function into more of an "edit"
+// method that appends to the existing review
   events: {
     'click a' : 'showForm',
-    'click .close' : 'hideForm',
-    'submit' : 'create',
-    'keydown textarea' : 'maybeCreate'
+    'click .close' : 'hideForm'
+    // 'submit' : 'create',
+    // 'keydown textarea' : 'maybeCreate'
+  },
+
+  initializeStarPlugin: function () {
+    this.$("#rateYo").rateYo({
+      halfStar: true
+    }).on("rateyo.set", function (e, data) {
+      this.create(data.rating);
+      this.showForm();
+    }.bind(this));
   },
 
   render: function () {
@@ -34,8 +51,8 @@ Goodrides.Views.ReviewForm = Backbone.CompositeView.extend({
     } else {
       content = this.linkTemplate();
     }
-
     this.$el.html(content);
+    this.initializeStarPlugin();
     this.delegateEvents();
     return this;
   },
@@ -52,9 +69,10 @@ Goodrides.Views.ReviewForm = Backbone.CompositeView.extend({
   },
 
   showForm: function (event) {
-    event.preventDefault();
+    if (event) {
+      event.preventDefault();
+    }
     this.formShowing = true;
     this.render();
   }
-
 });

@@ -50,13 +50,10 @@ Goodrides.Views.RideShow = Backbone.CompositeView.extend({
     this.model.reviews().each(this.addReview.bind(this));
   },
 
-
   renderReviewForm: function () {
     var view = new Goodrides.Views.ReviewForm({
       collection: this.collection
     });
-    debugger
     this.addSubview('#review-form', view);
-    // this.initializeStarPlugin();
   }
 });
