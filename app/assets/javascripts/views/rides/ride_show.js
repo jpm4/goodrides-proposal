@@ -43,23 +43,7 @@ Goodrides.Views.RideShow = Backbone.CompositeView.extend({
       });
       rating = +rating.toFixed(2);
       this.$("#starDisplay").append('<h4>Average Rating: ' + rating + '</h4>');
-    } 
-
-//   .rateYo("option", "onChange", function () {
-//    
-//       var options = $rateYo.rateYo("option");
-//    
-//       var color = getColor(options);
-//    
-//       $rateYo.rateYo("option", "ratedFill", color);
-//     }).rateYo("option", "onSet", function () {
-//    
-//       /* get all options of the plugin */
-//       var options = $rateYo.rateYo("option");
-//    
-//       /* set the 'ratedFill' of the plugin dynamically */
-//       $rateYo.rateYo("option", "ratedFill", getColor(options));
-// }));
+    }
   },
 
   renderReviews: function () {
@@ -71,6 +55,7 @@ Goodrides.Views.RideShow = Backbone.CompositeView.extend({
     var view = new Goodrides.Views.ReviewForm({
       collection: this.collection
     });
+    debugger
     this.addSubview('#review-form', view);
     // this.initializeStarPlugin();
   }

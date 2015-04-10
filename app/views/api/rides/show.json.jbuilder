@@ -6,4 +6,5 @@ json.reviews @ride.reviews do |review|
   json.title review.title
   json.body review.body
   json.user review.user.username
+  json.updated_at review.updated_at
 end
