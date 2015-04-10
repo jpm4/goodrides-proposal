@@ -4,6 +4,6 @@ json.reviews @ride.reviews do |review|
   json.id review.id
   json.star_rating review.star_rating
   json.body review.body
-  json.user review.user.username
+  json.name review.user.username
   json.updated_at review.updated_at
 end

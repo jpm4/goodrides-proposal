@@ -5,9 +5,17 @@ Goodrides.Views.ReviewShow = Backbone.CompositeView.extend({
 
   initialize: function () {
     this.listenTo(this.model, 'sync', this.render);
+    // this.model.on('change', this.tester, this);
   },
 
+  // tester: function () {
+  //   this.model.fetch( {
+  //     success: this.render.bind(this)
+  //   });
+  // },
+
   render: function () {
+    // debugger
     var content = this.template({
       review: this.model
     });

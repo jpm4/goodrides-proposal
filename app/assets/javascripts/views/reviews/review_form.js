@@ -9,7 +9,6 @@ Goodrides.Views.ReviewForm = Backbone.CompositeView.extend({
       ride_id: this.collection.ride.id,
       star_rating: rating
     });
-    debugger
   },
 
   edit: function () {

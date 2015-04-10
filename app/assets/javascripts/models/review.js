@@ -1,3 +1,2 @@
-Goodrides.Models.Review = Backbone.Model.extend({
-  
+Goodrides.Models.Review = Backbone.Model.extend({  
 });
