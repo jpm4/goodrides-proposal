@@ -9,6 +9,11 @@ Goodrides.Views.RideShow = Backbone.CompositeView.extend({
     // TODO: Put two functions in the callback above, including the edit function?
   },
 
+  renderOnRatingSubmit: function () {
+    this.addReview();
+    this.render();
+  },
+
   addReview: function (review) {
     var view = new Goodrides.Views.ReviewShow({
       model: review
@@ -22,7 +27,11 @@ Goodrides.Views.RideShow = Backbone.CompositeView.extend({
     });
     this.$el.html(content);
     this.renderReviews();
-    this.renderReviewForm();
+    if (!this.model.attributes.reviewed) {
+      this.renderReviewForm();
+    } else {
+      this.showUserStars();
+    }
     this.initializeStarPlugin();
     return this;
   },
@@ -39,13 +48,24 @@ Goodrides.Views.RideShow = Backbone.CompositeView.extend({
     var rating;
     if (this.collection.models.length > 0) {
       rating = this.averageStarRating();
-      this.$("#starDisplay").rateYo({
+      this.$("#avgStarDisplay").rateYo({
         rating: rating,
         readOnly: true
       });
       rating = +rating.toFixed(2);
-      this.$("#starDisplay").append('<h4>Average Rating: ' + rating + '</h4>');
+      this.$("#avgStarDisplay").append('<h4>Average Rating: ' + rating + '</h4>');
     }
+  },
+
+  showUserStars: function () {
+    var rating = this.model.attributes.user_rating;
+    this.$("#userStarDisplay").rateYo({
+      rating: rating,
+      readOnly: true,
+      ratedFill: "red",
+      normalFill: "black"
+    });
+    this.$("#userStarDisplay").append('<h4>Your Rating: ' + rating + '</h4>');
   },
 
   renderReviews: function () {

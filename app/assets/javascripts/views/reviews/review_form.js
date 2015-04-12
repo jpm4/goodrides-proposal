@@ -22,8 +22,9 @@ Goodrides.Views.ReviewForm = Backbone.CompositeView.extend({
       star_rating: this.rating,
       body: $('textarea').val()
     }, { wait: true });
-    this.$('textarea').val('');
-    this.$('textarea').focus();
+    this.$el.empty();
+    // this.$('textarea').val('');
+    // this.$('textarea').focus();
   },
 // TODO: make initial create action that creates a review with
 // star_rating, then make the above function into more of an "edit"
