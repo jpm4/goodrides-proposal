@@ -9,6 +9,6 @@ window.Goodrides = {
   }
 };
 
-$(document).ready(function(){
-  Goodrides.initialize();
-});
+// $(document).ready(function(){
+//   Goodrides.initialize();
+// });

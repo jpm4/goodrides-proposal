@@ -19,7 +19,7 @@ module Api
     end
 
     def user_rating
-      review = current_user.reviews.find_by_user_id(current_user.id)
+      review = current_user.reviews.find_by_ride_id(params[:id])
       if user_reviewed?
         @user_rating = { user_rating: review.star_rating }
       else

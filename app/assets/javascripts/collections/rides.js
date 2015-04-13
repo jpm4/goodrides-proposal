@@ -3,6 +3,8 @@ Goodrides.Collections.Rides = Backbone.Collection.extend({
 
   url: 'api/rides',
 
+  comparator: 'name',
+
   getOrFetch: function (id) {
     var ride = this.get(id);
 
