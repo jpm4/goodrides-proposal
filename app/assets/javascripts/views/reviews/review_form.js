@@ -45,6 +45,9 @@ Goodrides.Views.ReviewForm = Backbone.CompositeView.extend({
     }.bind(this));
   },
 
+  // TODO: maybe add to rateyo.set to display the now-rated star count
+  // in the div on the form template
+
   render: function () {
     var content;
     if (this.formShowing) {
