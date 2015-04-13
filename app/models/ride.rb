@@ -16,6 +16,7 @@ class Ride < ActiveRecord::Base
   has_many :reviews, dependent: :destroy
 
   def average_rating
+    return 0 if self.reviews.empty?
     sum = 0
     self.reviews.each do |review|
       sum += review.star_rating
