@@ -4,16 +4,16 @@ Goodrides.Views.ReviewForm = Backbone.CompositeView.extend({
   starTemplate: JST['reviews/stars'],
   formShowing: false,
 
+  initialize: function (options) {
+    this.rideShowView = options.rideShowView
+  },
+
   setStarRating: function (rating) {
     this.collection.create({
       ride_id: this.collection.ride.id,
       star_rating: rating
     });
   },
-
-  // addBody: function (event) {
-  //   event.preventDefault();
-  // },
 
   create: function (event) {
     event.preventDefault();
@@ -23,12 +23,11 @@ Goodrides.Views.ReviewForm = Backbone.CompositeView.extend({
       body: $('textarea').val()
     }, { wait: true });
     this.$el.empty();
+    this.rideShowView.showUserStars(this.rating);
     // this.$('textarea').val('');
     // this.$('textarea').focus();
   },
-// TODO: make initial create action that creates a review with
-// star_rating, then make the above function into more of an "edit"
-// method that appends to the existing review
+// TODO:
   events: {
     'click a' : 'showForm',
     'click .close' : 'hideForm',
@@ -37,16 +36,26 @@ Goodrides.Views.ReviewForm = Backbone.CompositeView.extend({
   },
 
   initializeStarPlugin: function () {
+    var renderForm;
+    var firstTime;
+
+    if (this.formShowing) {
+      renderForm = this.initializeStarPlugin.bind(this);
+    } else {
+      renderForm = this.showForm.bind(this);
+    }
+
     this.$("#rateYo").rateYo({
-      halfStar: true
+      halfStar: true,
+      rating: this.rating
     }).on("rateyo.set", function (e, data) {
       this.rating = data.rating;
-      this.showForm();
+      renderForm();
     }.bind(this));
   },
 
-  // TODO: maybe add to rateyo.set to display the now-rated star count
-  // in the div on the form template
+  // TODO: changing score multiple times is doing something that takes up memory,
+  // figure it out
 
   render: function () {
     var content;

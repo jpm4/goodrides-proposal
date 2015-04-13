@@ -3,7 +3,7 @@ Goodrides.Collections.Reviews = Backbone.Collection.extend({
   url: 'api/reviews',
 
   comparator: function(m) {
-    return -Date.parse(m.get('updated_at'));
+    return Date.parse(m.get('updated_at'));
   },
 
   initialize: function (models, options) {

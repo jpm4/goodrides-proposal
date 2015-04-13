@@ -57,8 +57,10 @@ Goodrides.Views.RideShow = Backbone.CompositeView.extend({
     }
   },
 
-  showUserStars: function () {
-    var rating = this.model.attributes.user_rating;
+  showUserStars: function (rating) {
+    if (!rating) {
+      var rating = this.model.attributes.user_rating;
+    }
     this.$("#userStarDisplay").rateYo({
       rating: rating,
       readOnly: true,
@@ -74,7 +76,8 @@ Goodrides.Views.RideShow = Backbone.CompositeView.extend({
 
   renderReviewForm: function () {
     var view = new Goodrides.Views.ReviewForm({
-      collection: this.collection
+      collection: this.collection,
+      rideShowView: this
     });
     this.addSubview('#review-form', view);
   }
