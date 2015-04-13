@@ -14,7 +14,7 @@
  *= require_self
  *= require jquery.rateyo
  */
- 
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
@@ -32,4 +32,17 @@ img {
   background-color: black;
   border-color: none;
   margin-right: 1px;
+}
+
+.thumbnail {
+  max-height: 200px;
+  max-width: 150px;
+}
+
+.review-heading {
+  border: 1px solid black;
+  margin-bottom: 5px;
+  margin-right: 250px;
+  margin-left: 5px;
+  background-color: #F5DEB3;
 }

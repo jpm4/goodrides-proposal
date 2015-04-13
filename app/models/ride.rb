@@ -14,4 +14,12 @@ class Ride < ActiveRecord::Base
   validates :name, presence: true, uniqueness: true
 
   has_many :reviews, dependent: :destroy
+
+  def average_rating
+    sum = 0
+    self.reviews.each do |review|
+      sum += review.star_rating
+    end
+    (sum / self.reviews.count).round(2)
+  end
 end

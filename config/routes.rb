@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resource :session
 
   namespace :api, defaults: { format: :json } do
-    resources :rides, only: [:index, :show]
+    resources :rides, only: [:index, :show, :highest]
     resources :reviews, only: [:create, :update, :destroy, :show]
   end
 end

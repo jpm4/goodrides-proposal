@@ -8,11 +8,22 @@ module Api
     end
 
     def index
-      @rides = Ride.all
+      if params[:highest] == "true"
+        @rides = highest_rated
+      else
+        @rides = Ride.all
+      end
       render :index
     end
 
+    # TODO: tell index if the current_user has rated each ride
+
     private
+
+    def highest_rated(top = 5)
+      sorted = Ride.all.sort_by { |ride| ride.average_rating }
+      sorted.last(5)
+    end
 
     def user_reviewed?
       current_user.reviews.exists?(ride_id: params[:id])

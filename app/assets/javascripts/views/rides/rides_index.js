@@ -13,6 +13,22 @@ Goodrides.Views.RidesIndex = Backbone.View.extend({
     });
 
     this.$el.html(content);
+    this.addMiniStars();
     return this;
+  },
+
+  addMiniStars: function () {
+    this.collection.models.forEach (function(ride) {
+      var attrs = ride.attributes;
+      var rating = attrs.average_rating;
+      var id = attrs.id;
+      this.$("#rateYo-mini-" + id).rateYo({
+        rating: rating,
+        readOnly: true,
+        starWidth: "12px",
+        ratedFill: "silver",
+        normalFill: "black"
+      });
+    }.bind(this));
   }
 });

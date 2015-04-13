@@ -2,6 +2,7 @@ Goodrides.Views.RidesCollection = Backbone.CompositeView.extend({
   template: JST['rides/index'],
 
   initialize: function () {
+    this.collection
     this.listenTo(this.collection, 'sync', this.render);
   },
 
