@@ -59,7 +59,7 @@ Review.create(user_id: u1.id, ride_id: r1.id, star_rating: 5,
 Review.create(user_id: u1.id, ride_id: r6.id, star_rating: 3,
   body: "Mmm, fun, but too much 3D.")
 Review.create(user_id: u2.id, ride_id: r4.id, star_rating: 4.5,
- body: "What's the most you've ever lost on a roller coaster?")
+ body: "What's the biggest coin you've ever lost on a roller coaster?")
 Review.create(user_id: u4.id, ride_id: r2.id, star_rating: 5,
  body: "Practically perfect in every way.")
 Review.create(user_id: u5.id, ride_id: r4.id, star_rating: 4,

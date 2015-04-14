@@ -20,7 +20,6 @@ Goodrides.Routers.Router = Backbone.Router.extend({
   },
 
   highestRated: function () {
-
     this.collection.fetch({ data: { highest: true }, processData: true });
     var view = new Goodrides.Views.RidesIndex({
       collection: this.collection

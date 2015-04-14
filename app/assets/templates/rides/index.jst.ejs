@@ -4,10 +4,10 @@
 <ul class="rides">
   <% rides.each(function (ride) { %>
     <li>
-      <img><img src="<%= ride.escape('image_url') %>"
-            alt="<%= ride.escape('name') %>" class="thumbnail"></img>
-      <div id="rateYo-mini-<%= ride.escape('id') %>"></div>
       <a href="/#/rides/<%= ride.id %>">
+        <img><img src="<%= ride.escape('image_url') %>"
+              alt="<%= ride.escape('name') %>" class="thumbnail"></img>
+        <div id="rateYo-mini-<%= ride.escape('id') %>"></div>
         <%= ride.escape("name") %>
       </a>
     </li>

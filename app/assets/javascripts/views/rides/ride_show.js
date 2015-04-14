@@ -51,7 +51,6 @@ Goodrides.Views.RideShow = Backbone.CompositeView.extend({
       this.$("#avgStarDisplay").rateYo({
         rating: rating,
         readOnly: true,
-        normalFill: "black",
         ratedFill: "gold"
       });
       rating = +rating.toFixed(2);
