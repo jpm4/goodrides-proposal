@@ -26,8 +26,8 @@ Goodrides.Views.RidesIndex = Backbone.View.extend({
         rating: rating,
         readOnly: true,
         starWidth: "12px",
-        ratedFill: "silver",
-        normalFill: "black"
+        ratedFill: "black",
+        normalFill: "silver"
       });
     }.bind(this));
   }
