@@ -1,16 +1,20 @@
 <h1>Sign Up</h2>
 <form action="<%= users_url %>" method="post">
-  <%= auth_token_input %>  
+  <%= auth_token_input %>
 
-  <label>
-    Username
-    <input type="text" name="user[username]" value="">
-  </label>
+  <div class="form-group">
+    <label>
+      Username
+      <input type="text" class="form-control" name="user[username]" value="">
+    </label>
+  </div>
 
-  <label>
-    Password
-    <input type="password" name="user[password]" value="">
-  </label>
+  <div class="form-group">
+    <label>
+      Password
+      <input type="password" class="form-control" name="user[password]" value="">
+    </label>
+  </div>
 
   <input type="submit" value="Sign Up">
 </form>
