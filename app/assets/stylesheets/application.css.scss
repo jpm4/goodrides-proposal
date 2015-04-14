@@ -21,7 +21,6 @@
 body {
   margin-top: 75px;
   background-color: #FAEBD7;
-  margin-left: 25px;
 }
 
 img {
@@ -42,7 +41,10 @@ img {
 
 .review-heading {
   border: 1px solid black;
-  margin-bottom: 5px;
+  padding-left: 10px;
+  border-radius: 25px;
+  box-shadow: 2px 2px 2px 3px #ccc;
+  margin-bottom: 9px;
   margin-right: 250px;
   margin-left: 5px;
   background-color: #F5DEB3;

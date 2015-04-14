@@ -32,29 +32,40 @@ Goodrides.Views.RideShow = Backbone.CompositeView.extend({
     } else {
       this.showUserStars();
     }
-    this.initializeStarPlugin();
+    this.averageStarDisplay();
     return this;
   },
 
-  averageStarRating: function () {
+  averageStarRating: function (newValue, count) {
     var sum = 0;
+    if (newValue) {
+      sum += newValue;
+    }
     this.collection.models.forEach (function (review) {
       sum += review.attributes.star_rating;
     });
-    return sum / this.collection.models.length;
+    return sum / count;
   },
 
-  initializeStarPlugin: function () {
-    var rating;
-    if (this.collection.models.length > 0) {
-      rating = this.averageStarRating();
-      this.$("#avgStarDisplay").rateYo({
+  averageStarDisplay: function (newValue) {
+    var count = this.collection.models.length;
+    var el = "#avgStarDisplay";
+    if (newValue) {
+      count += 1;
+      this.$(el).remove();
+      el = "#newAvgStarDisplay";
+    }
+    if (count > 0) {
+      rating = this.averageStarRating(newValue, count);
+
+      this.$(el).rateYo({
         rating: rating,
         readOnly: true,
         ratedFill: "gold"
       });
+
       rating = +rating.toFixed(2);
-      this.$("#avgStarDisplay").append('<h4>Average Rating: ' + rating + '</h4>');
+      this.$(el).append('<h4>Average Rating: ' + rating + '</h4>');
     }
   },
 

@@ -24,6 +24,7 @@ Goodrides.Views.ReviewForm = Backbone.CompositeView.extend({
     }, { wait: true });
     this.$el.empty();
     this.rideShowView.showUserStars(this.rating);
+    this.rideShowView.averageStarDisplay(this.rating);
     // this.$('textarea').val('');
     // this.$('textarea').focus();
   },
