@@ -6,8 +6,10 @@ Goodrides.Routers.Router = Backbone.Router.extend({
 
   routes: {
     '' : 'highestRated',
+    'highest': 'highestRated',
     'rides' : 'ridesIndex',
     'rides/:id' : 'rideShow'
+
   },
 
   ridesIndex: function () {
