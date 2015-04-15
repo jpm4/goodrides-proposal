@@ -25,7 +25,8 @@ Goodrides.Routers.Router = Backbone.Router.extend({
   ratedIndex: function () {
     this.collection.fetch({ data: { rated: true }, processData: true });
     var view = new Goodrides.Views.RidesIndex({
-      collection: this.collection
+      collection: this.collection,
+      missing: "You haven't rated any rides yet!"
     });
 
     this._swapView(view);
@@ -34,7 +35,8 @@ Goodrides.Routers.Router = Backbone.Router.extend({
   notRatedIndex: function () {
     this.collection.fetch({ data: { not_rated: true }, processData: true });
     var view = new Goodrides.Views.RidesIndex({
-      collection: this.collection
+      collection: this.collection,
+      missing: "You have rated all rides in the database!"
     });
 
     this._swapView(view);

@@ -3,13 +3,15 @@ Goodrides.Views.RidesIndex = Backbone.View.extend({
 
   className: 'rides-index',
 
-  initialize: function () {
+  initialize: function (options) {
+    this.missing = options["missing"],
     this.listenTo(this.collection, 'sync', this.render);
   },
 
   render: function () {
     var content = this.template({
-      rides: this.collection
+      rides: this.collection,
+      missing: this.missing
     });
 
     this.$el.html(content);

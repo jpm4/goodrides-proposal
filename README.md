@@ -15,7 +15,7 @@ goodrides is a clone of goodreads built on Rails and Backbone. Users can:
 - [x] Display average star rating
 - [x] Create ride reviews
 - [x] View ride reviews
-- [ ] View a list of rides rated
+- [x] View a list of rides rated
 - [ ] Tag rides as "want to ride"
 - [ ] View "want to ride" list
 - [ ] Search for rides by name
