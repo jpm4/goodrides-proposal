@@ -8,6 +8,21 @@ Goodrides.Views.RidesIndex = Backbone.View.extend({
     this.listenTo(this.collection, 'sync', this.render);
   },
 
+  events: {
+   'keyup :input' : 'search'
+  },
+
+  search: function(e) {
+    var value = this.$(".search").val()
+    this.collection.fetch({
+      data: {
+        query: value
+      }
+    })
+    // console.log(e.type, e.keyCode);
+    // console.log(this.$(".search").val());
+  },
+
   render: function () {
     var content = this.template({
       rides: this.collection,
@@ -27,7 +42,7 @@ Goodrides.Views.RidesIndex = Backbone.View.extend({
       this.$("#rateYo-mini-" + id).rateYo({
         rating: rating,
         readOnly: true,
-        starWidth: "12px",
+        starWidth: "14px",
         ratedFill: "black",
         normalFill: "silver"
       });

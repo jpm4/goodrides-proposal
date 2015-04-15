@@ -8,7 +8,11 @@ module Api
     end
 
     def index
-      if params[:highest] == "true"
+      # add a .where clause
+      # something like .where("rides.name LIKE %?%", thingy)
+      if params[:query]
+        @rides = search_results
+      elsif params[:highest] == "true"
         @rides = highest_rated
       elsif params[:rated] == "true"
         @rides = user_reviewed(true)
@@ -45,6 +49,11 @@ module Api
 
     def user_reviewed?
       current_user.reviews.exists?(ride_id: params[:id])
+    end
+
+    def search_results
+      query = params[:query]
+      Ride.all.where("rides.name LIKE ?", "%#{query}%")
     end
 
     def user_rating

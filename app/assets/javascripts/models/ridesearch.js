@@ -17,7 +17,7 @@ Goodrides.Models.RideSearch = Backbone.Model.extend({
       models = this.collection.models;
     } else {
       models = this.collection.filter(function(model) {
-        return _.some(_.values(model), function(value) {
+        return _.some(_.values(model.pick('name')), function(value) {
           return ~value.toLowerCase().indexOf(what);
         });
       });
