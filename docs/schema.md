@@ -20,14 +20,14 @@ image_url   | string    |
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-user_id     | integer   | not null, foreign key (references users)
-star_rating | integer   | range: 1-5
-title       | string    |
+user_id     | integer   | not null, foreign key
+star_rating | integer   | range: 0-5
+ride_id     | integer   | nut null, foreign key
 body        | text      |
 
 ## wants
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-user_id     | integer   | not null, foreign key (references users)
-ride_id     | integer   | not null, foreign key (references rides)
+user_id     | integer   | not null, foreign key
+ride_id     | integer   | not null, foreign key
