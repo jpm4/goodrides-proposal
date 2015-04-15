@@ -10,6 +10,10 @@ module Api
     def index
       if params[:highest] == "true"
         @rides = highest_rated
+      elsif params[:rated] == "true"
+        @rides = user_reviewed(true)
+      elsif params[:not_rated] == "true"
+        @rides = user_reviewed(false)
       else
         @rides = Ride.all
       end
@@ -20,9 +24,23 @@ module Api
 
     private
 
-    def highest_rated(top = 5)
+    def user_reviewed(boolean)
+      reviewed = []
+      not_reviewed = []
+      Ride.all.each do |ride|
+        if current_user.reviews.exists?(ride_id: ride.id)
+          reviewed << ride
+        else
+          not_reviewed << ride
+        end
+      end
+
+      boolean ? reviewed : not_reviewed
+    end
+
+    def highest_rated(top = 3)
       sorted = Ride.all.sort_by { |ride| ride.average_rating }
-      sorted.last(5)
+      sorted.last(top)
     end
 
     def user_reviewed?

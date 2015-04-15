@@ -5,15 +5,34 @@ Goodrides.Routers.Router = Backbone.Router.extend({
   },
 
   routes: {
-    '' : 'highestRated',
+    '' : 'ridesIndex',
     'highest': 'highestRated',
     'rides' : 'ridesIndex',
-    'rides/:id' : 'rideShow'
-
+    'rides/:id' : 'rideShow',
+    'rated' : 'ratedIndex',
+    'notrated' : 'notRatedIndex'
   },
 
   ridesIndex: function () {
     this.collection.fetch();
+    var view = new Goodrides.Views.RidesIndex({
+      collection: this.collection
+    });
+
+    this._swapView(view);
+  },
+
+  ratedIndex: function () {
+    this.collection.fetch({ data: { rated: true }, processData: true });
+    var view = new Goodrides.Views.RidesIndex({
+      collection: this.collection
+    });
+
+    this._swapView(view);
+  },
+
+  notRatedIndex: function () {
+    this.collection.fetch({ data: { not_rated: true }, processData: true });
     var view = new Goodrides.Views.RidesIndex({
       collection: this.collection
     });

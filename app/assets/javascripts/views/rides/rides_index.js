@@ -9,8 +9,7 @@ Goodrides.Views.RidesIndex = Backbone.View.extend({
 
   render: function () {
     var content = this.template({
-      rides: this.collection,
-
+      rides: this.collection
     });
 
     this.$el.html(content);
