@@ -48,8 +48,8 @@ module Api
     end
 
     def search_results
-      query = params[:query]
-      Ride.all.where("rides.name LIKE ?", "%#{query}%")
+      query = params[:query].downcase
+      Ride.all.where("LOWER(rides.name) LIKE LOWER(?)", "%#{query}%")
     end
 
     def user_rating
