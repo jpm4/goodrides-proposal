@@ -5,14 +5,7 @@ Goodrides.Views.ReviewShow = Backbone.CompositeView.extend({
 
   initialize: function () {
     this.listenTo(this.model, 'sync', this.render);
-    // this.model.on('change', this.tester, this);
   },
-
-  // tester: function () {
-  //   this.model.fetch( {
-  //     success: this.render.bind(this)
-  //   });
-  // },
 
   render: function () {
     var content = this.template({
@@ -33,6 +26,4 @@ Goodrides.Views.ReviewShow = Backbone.CompositeView.extend({
 
     this.$(".review-star-rating").append('<h4>Rating: ' + rating + '</h4>');
   }
-
-
 });
