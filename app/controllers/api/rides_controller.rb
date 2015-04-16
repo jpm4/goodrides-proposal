@@ -1,7 +1,11 @@
 module Api
   class RidesController < ApiController
     def show
-      @ride = Ride.find(params[:id])
+      @ride = Ride.includes(:wants).find(params[:id])
+      @wants_hash = {}
+      if signed_in?
+        @wants_hash[@ride.id] = @ride.likes.find_by(user_id: current_user.id)
+      end
       @reviewed = { reviewed: user_reviewed? }
       @user_rating = user_rating
       render :show
@@ -17,8 +21,15 @@ module Api
       elsif params[:not_rated] == "true"
         @rides = user_reviewed(false)
       else
-        @rides = Ride.all
+        @rides = Ride.includes(:wants)
       end
+
+      if signed_in?
+        @wants_hash = current_user.ride_wants_hash
+      else
+        @wants_hash = {}
+      end
+
       render :index
     end
 
