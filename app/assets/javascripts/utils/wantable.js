@@ -3,7 +3,7 @@ Goodrides.Mixins.Wantable = {
     if (!this._want) {
       this._want = new Goodrides.Models.Want;
     }
-    return this._like;
+    return this._want;
   },
 
   createWant: function () {

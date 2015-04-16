@@ -1,4 +1,5 @@
 window.Goodrides = {
+  Mixins: {},
   Models: {},
   Collections: {},
   Views: {},

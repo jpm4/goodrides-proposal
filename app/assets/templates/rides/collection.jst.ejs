@@ -9,8 +9,9 @@
             alt="<%= ride.escape('name') %>" class="thumbnail"></img>
       <div id="rateYo-mini-<%= ride.escape('id') %>"></div>
       <%= ride.escape("name") %>
+    </a>
     </div>
-  </a>
+    <div id="want-button-<%= ride.escape('id') %>"></div>
 <% }); %>
 
 <% if (rides.length == 0) { %>

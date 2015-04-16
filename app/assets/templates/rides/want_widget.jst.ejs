@@ -1,0 +1,13 @@
+<button class="btn btn-primary">
+  <% if (want.isNew()) { %>
+    <span class="glyphicon glyphicon-plus"></span>
+    Want to ride!
+  <% } else { %>
+    <span class="glyphicon glyphicon-minus"></span>
+    Don't want to ride!
+  <% } %>
+</button>
+
+<span class="want-info">
+  <%= ride.escape("num_wants") + " " + fragment %> to ride this ride!
+</span>

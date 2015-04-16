@@ -1,5 +1,10 @@
-Goodrides.Models.Ride = Backbone.Model.extend({
+Goodrides.Models.Ride = Backbone.Model.extend(
+  _.extend({}, Goodrides.Mixins.Wantable, {
   urlRoot: 'api/rides',
+
+  wantableOptions: {
+    foreignKey: "ride_id"
+  },
 
   reviews: function () {
     if (!this._reviews) {
@@ -14,7 +19,8 @@ Goodrides.Models.Ride = Backbone.Model.extend({
       this.reviews().set(response.reviews, { parse: true });
       delete response.reviews;
     }
-
+    this.parseWant(response);
     return response;
   }
-});
+})
+);

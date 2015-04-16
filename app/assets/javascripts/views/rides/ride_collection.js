@@ -12,11 +12,11 @@ Goodrides.Views.RidesCollection = Backbone.CompositeView.extend({
       missing: this.missing
     });
     this.$el.html(content);
-    this.addMiniStars();
+    this.addStarsAndWants();
     return this;
   },
 
-  addMiniStars: function () {
+  addStarsAndWants: function () {
     this.collection.models.forEach (function(ride) {
       var attrs = ride.attributes;
       var rating = attrs.average_rating;
@@ -28,6 +28,12 @@ Goodrides.Views.RidesCollection = Backbone.CompositeView.extend({
         ratedFill: "black",
         normalFill: "silver"
       });
+      var wantWidget = new Goodrides.Views.WantWidget({
+        model: ride
+      });
+      this.addSubview("#want-button-" + ride.id, wantWidget);
     }.bind(this));
+
+
   }
 });
