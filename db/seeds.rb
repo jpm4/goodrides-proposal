@@ -14,7 +14,7 @@ r1 = Ride.create(
 r2 = Ride.create(
   name: "Splash Mountain",
   description: "Splash Mountain is a log flume-style dark ride at Disneyland, Tokyo Disneyland, and the Magic Kingdom at the Walt Disney World Resort, based on the characters, stories, and songs from the 1946 Disney film Song of the South. Although there are variations in the story and features between the three locations, each installation begins with a peaceful outdoor float-through that leads to indoor dark ride segments, with a climactic steep drop into a \"briar patch\" followed by an indoor finale. The drop is 50 feet.",
-  image_url: "http://cdn.wdwmagic.com/imgstore/elements/Splash-Mountain.jpg"
+  image_url: "http://th08.deviantart.net/fs70/PRE/f/2013/107/5/3/tokyo_disneyland___splash_mountain_by_duceduc-d620lin.jpg"
 )
 
 r3 = Ride.create(

@@ -25,6 +25,7 @@ Goodrides.Views.RideShow = Backbone.CompositeView.extend({
     });
     this.$el.html(content);
     this.renderReviews();
+    this.renderWantWidget();
     if (!this.model.attributes.reviewed) {
       this.renderReviewForm();
     } else {
@@ -93,5 +94,12 @@ Goodrides.Views.RideShow = Backbone.CompositeView.extend({
       rideShowView: this
     });
     this.addSubview('#review-form', view);
+  },
+
+  renderWantWidget: function () {
+    var view = new Goodrides.Views.WantWidget({
+      model: this.model
+    });
+    this.addSubview('#want-view', view);
   }
 });
