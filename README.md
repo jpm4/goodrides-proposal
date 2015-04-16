@@ -79,6 +79,7 @@ extra features if time allows.
 - [ ] Quotes
 - [ ] Typeahead search bar
 - [ ] Show rides on map
+- [ ] Minor bug when setting review score to 0
 
 [phase-one]: ./docs/phases/phase1.md
 [phase-two]: ./docs/phases/phase2.md

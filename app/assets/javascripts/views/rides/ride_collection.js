@@ -1,14 +1,15 @@
 Goodrides.Views.RidesCollection = Backbone.CompositeView.extend({
-  template: JST['rides/index'],
+  template: JST['rides/collection'],
 
-  initialize: function () {
-    this.collection
+  initialize: function (options) {
+    this.missing = options["missing"];
     this.listenTo(this.collection, 'sync', this.render);
   },
 
   render: function () {
     var content = this.template({
-      rides: this.collection
+      rides: this.collection,
+      missing: this.missing
     });
 
     this.$el.html(content);

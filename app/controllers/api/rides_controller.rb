@@ -8,8 +8,6 @@ module Api
     end
 
     def index
-      # add a .where clause
-      # something like .where("rides.name LIKE %?%", thingy)
       if params[:query]
         @rides = search_results
       elsif params[:highest] == "true"
@@ -23,8 +21,6 @@ module Api
       end
       render :index
     end
-
-    # TODO: tell index if the current_user has rated each ride
 
     private
 

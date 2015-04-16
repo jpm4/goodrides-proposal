@@ -4,7 +4,6 @@ Goodrides.Views.RideShow = Backbone.CompositeView.extend({
   initialize: function () {
     this.collection = this.model.reviews();
     this.listenTo(this.model, 'sync', this.render);
-    // this.listenTo(this.model, 'change', this.render);
     this.listenTo(this.collection, 'add', this.addReview);
     // TODO: Put two functions in the callback above, including the edit function?
   },
@@ -50,6 +49,7 @@ Goodrides.Views.RideShow = Backbone.CompositeView.extend({
   averageStarDisplay: function (newValue) {
     var count = this.collection.models.length;
     var el = "#avgStarDisplay";
+    var rating;
     if (newValue) {
       count += 1;
       this.$(el).remove();
@@ -64,7 +64,9 @@ Goodrides.Views.RideShow = Backbone.CompositeView.extend({
         ratedFill: "gold"
       });
 
-      rating = +rating.toFixed(2);
+      if (rating > 0) {
+        rating = +rating.toFixed(2);
+      }
       this.$(el).append('<h4>Average Rating: ' + rating + '</h4>');
     }
   },

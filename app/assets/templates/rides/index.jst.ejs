@@ -1,6 +1,8 @@
 <form>
-  <label>Search Ride Names...<br>
-    <input class="search" type="text" name="what" /></label>
+  <div class="form-group">
+    <label>Search Ride Names...<br>
+      <input class="search form-control" type="text" name="what" /></label>
+  </div>
 </form>
 
 <br>
@@ -12,21 +14,4 @@
 <br>
 <a href="/#/notrated">Rides You Haven't Rated</a>
 
-<div class='rides-index-title'>
-  <h3>Rides</h3>
-</div>
-
-<% rides.each(function (ride) { %>
-  <a href="/#/rides/<%= ride.id %>">
-    <div class="ride-index-view">
-      <img><img src="<%= ride.escape('image_url') %>"
-            alt="<%= ride.escape('name') %>" class="thumbnail"></img>
-      <div id="rateYo-mini-<%= ride.escape('id') %>"></div>
-      <%= ride.escape("name") %>
-    </div>
-  </a>
-<% }); %>
-
-<% if (rides.length == 0) { %>
-  <p><%= this.missing %></p>
-<% } %>
+<div class="rides-collection"></div>
