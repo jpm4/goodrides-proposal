@@ -46,6 +46,12 @@ r7 = Ride.create(
   image_url: "http://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Diagon_Alley3.jpg/1024px-Diagon_Alley3.jpg"
 )
 
+r8 = Ride.create(
+  name: "GhostRider",
+  description: "GhostRider is a wooden roller coaster at Knott's Berry Farm in Buena Park, California. It is located in the Ghost Town section of the park, south of the main entrance. It is the longest wooden coaster on the West Coast.",
+  image_url: "http://25.media.tumblr.com/tumblr_ma52rv1M391r1e3nno1_1280.jpg"
+)
+
 u1 = User.create(username: "Yoda", password: "starwars")
 u2 = User.create(username: "Anton Chigurh", password: "starwars")
 u3 = User.create(username: "Daisy Duck", password: "starwars")
@@ -79,4 +85,4 @@ Review.create(user_id: u6.id, ride_id: r1.id, star_rating: 5,
 Review.create(user_id: u5.id, ride_id: r2.id, star_rating: 5,
  body: "A step in the right direction. Right? ;-)")
 Review.create(user_id: u5.id, ride_id: r3.id, star_rating: 4.5,
- body: "Powerful enough to shatter any ceiling, glass or not!")
+ body: "Shoots you up in the air with enough power to shatter any ceiling, glass or not!")

@@ -4,7 +4,7 @@ module Api
       @ride = Ride.includes(:wants).find(params[:id])
       @wants_hash = {}
       if signed_in?
-        @wants_hash[@ride.id] = @ride.likes.find_by(user_id: current_user.id)
+        @wants_hash[@ride.id] = @ride.wants.find_by(user_id: current_user.id)
       end
       @reviewed = { reviewed: user_reviewed? }
       @user_rating = user_rating
@@ -25,7 +25,7 @@ module Api
       end
 
       if signed_in?
-        @wants_hash = current_user.ride_wants_hash
+        @wants_hash = current_user.rides_wants_hash
       else
         @wants_hash = {}
       end

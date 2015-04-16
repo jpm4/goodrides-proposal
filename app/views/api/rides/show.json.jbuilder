@@ -1,4 +1,6 @@
-json.extract! @ride, :id, :name, :description, :image_url
+json.partial! "api/rides/ride", ride: @ride, wants_hash: @wants_hash
+
+# json.extract! @ride, :id, :name, :description, :image_url
 
 json.(@reviewed, :reviewed)
 json.(@user_rating, :user_rating)
