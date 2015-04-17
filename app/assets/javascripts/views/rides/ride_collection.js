@@ -3,13 +3,15 @@ Goodrides.Views.RidesCollection = Backbone.CompositeView.extend({
 
   initialize: function (options) {
     this.missing = options["missing"];
+    this.collectionName = options.collectionName;
     this.listenTo(this.collection, 'sync remove', this.render);
   },
 
   render: function () {
     var content = this.template({
       rides: this.collection,
-      missing: this.missing
+      missing: this.missing,
+      collectionName: this.collectionName
     });
     this.$el.html(content);
     this.addStarsAndWants();

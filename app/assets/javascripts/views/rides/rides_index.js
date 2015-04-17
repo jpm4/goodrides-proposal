@@ -5,6 +5,7 @@ Goodrides.Views.RidesIndex = Backbone.CompositeView.extend({
 
   initialize: function (options) {
     this.missing = options["missing"];
+    this.collectionName = options.collectionName;
     this.renderRidesCollection();
   },
 
@@ -31,7 +32,8 @@ Goodrides.Views.RidesIndex = Backbone.CompositeView.extend({
   renderRidesCollection: function () {
     var view = new Goodrides.Views.RidesCollection({
       collection: this.collection,
-      missing: this.missing
+      missing: this.missing,
+      collectionName: this.collectionName
     });
     this.addSubview('.rides-collection', view);
   }

@@ -18,7 +18,8 @@ Goodrides.Routers.Router = Backbone.Router.extend({
   ridesIndex: function () {
     this.collection.fetch();
     var view = new Goodrides.Views.RidesIndex({
-      collection: this.collection
+      collection: this.collection,
+      collectionName: "Full Rides Index"
     });
 
     this._swapView(view);
@@ -28,7 +29,8 @@ Goodrides.Routers.Router = Backbone.Router.extend({
     this.collection.fetch({ data: { rated: true }, processData: true });
     var view = new Goodrides.Views.RidesIndex({
       collection: this.collection,
-      missing: "You haven't rated any rides yet!"
+      missing: "You haven't rated any rides yet!",
+      collectionName: "Rides You've Rated"
     });
 
     this._swapView(view);
@@ -38,7 +40,8 @@ Goodrides.Routers.Router = Backbone.Router.extend({
     this.collection.fetch({ data: { not_rated: true }, processData: true });
     var view = new Goodrides.Views.RidesIndex({
       collection: this.collection,
-      missing: "You have rated all rides in the database!"
+      missing: "You have rated all rides in the database!",
+      collectionName: "Rides You Haven't Rated"
     });
 
     this._swapView(view);
@@ -47,7 +50,8 @@ Goodrides.Routers.Router = Backbone.Router.extend({
   highestRated: function () {
     this.collection.fetch({ data: { highest: true }, processData: true });
     var view = new Goodrides.Views.RidesIndex({
-      collection: this.collection
+      collection: this.collection,
+      collectionName: "Top Rated Rides"
     });
 
     this._swapView(view);
@@ -56,7 +60,8 @@ Goodrides.Routers.Router = Backbone.Router.extend({
   mostWanted: function () {
     this.collection.fetch({ data: { most_wanted: true }, processData: true });
     var view = new Goodrides.Views.RidesIndex({
-      collection: this.collection
+      collection: this.collection,
+      collectionName: "Most Wanted Rides"
     });
 
     this._swapView(view);
@@ -66,7 +71,8 @@ Goodrides.Routers.Router = Backbone.Router.extend({
     this.collection.fetch({ data: { user_wants: true }, processData: true });
     var view = new Goodrides.Views.RidesIndex({
       collection: this.collection,
-      missing: "You haven't marked any rides as 'Want to ride'!"
+      missing: "You haven't marked any rides as 'Want to ride'!",
+      collectionName: "Your Wanted Rides"
     });
 
     this._swapView(view);
