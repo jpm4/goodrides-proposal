@@ -10,7 +10,9 @@ Goodrides.Routers.Router = Backbone.Router.extend({
     'rides' : 'ridesIndex',
     'rides/:id' : 'rideShow',
     'rated' : 'ratedIndex',
-    'notrated' : 'notRatedIndex'
+    'notrated' : 'notRatedIndex',
+    'mostwanted' : 'mostWanted',
+    'wants' : 'userWants'
   },
 
   ridesIndex: function () {
@@ -46,6 +48,25 @@ Goodrides.Routers.Router = Backbone.Router.extend({
     this.collection.fetch({ data: { highest: true }, processData: true });
     var view = new Goodrides.Views.RidesIndex({
       collection: this.collection
+    });
+
+    this._swapView(view);
+  },
+
+  mostWanted: function () {
+    this.collection.fetch({ data: { most_wanted: true }, processData: true });
+    var view = new Goodrides.Views.RidesIndex({
+      collection: this.collection
+    });
+
+    this._swapView(view);
+  },
+
+  userWants: function () {
+    this.collection.fetch({ data: { user_wants: true }, processData: true });
+    var view = new Goodrides.Views.RidesIndex({
+      collection: this.collection,
+      missing: "You haven't marked any rides as 'Want to ride'!"
     });
 
     this._swapView(view);

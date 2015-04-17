@@ -20,6 +20,10 @@ module Api
         @rides = user_reviewed(true)
       elsif params[:not_rated] == "true"
         @rides = user_reviewed(false)
+      elsif params[:most_wanted]
+        @rides = most_wanted
+      elsif params[:user_wants]
+        @rides = user_wants
       else
         @rides = Ride.includes(:wants)
       end
@@ -61,6 +65,14 @@ module Api
     def search_results
       query = params[:query].downcase
       Ride.all.where("LOWER(rides.name) LIKE LOWER(?)", "%#{query}%")
+    end
+
+    def most_wanted
+      
+    end
+
+    def user_wants
+      current_user.wanted_rides
     end
 
     def user_rating
