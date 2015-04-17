@@ -67,8 +67,9 @@ module Api
       Ride.all.where("LOWER(rides.name) LIKE LOWER(?)", "%#{query}%")
     end
 
-    def most_wanted
-      
+    def most_wanted(top = 3)
+      sorted = Ride.all.sort_by { |ride| ride.wants.size }
+      sorted.last(top)
     end
 
     def user_wants
