@@ -28,6 +28,10 @@ Goodrides.Mixins.Wantable = {
       this.createWant();
     } else {
       this.destroyWant();
+      var location = Backbone.history.location.hash;
+      if (location === "#/wants" || location === "#wants") {
+        this.collection.remove(this);
+      }
     }
   },
 

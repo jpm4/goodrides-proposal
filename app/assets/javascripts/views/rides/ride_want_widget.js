@@ -6,20 +6,16 @@ Goodrides.Views.WantWidget = Backbone.View.extend({
   },
 
   initialize: function (options) {
-    this.parentView = options.parentView;
     this.listenTo(this.model, 'change:num_wants', this.render);
   },
 
   toggleWant: function (event) {
     event.preventDefault();
-    debugger
-    this.model.toggleWant(this.parentView.collection);
-    // Backbone.history.location.hash
-    // this.parentView.collection.remove(this.model);
+    this.model.toggleWant();
   },
 
   render: function () {
-    var noun;
+    var fragment;
     if (this.model.attributes.num_wants === 1) {
       fragment = "person wants";
     } else {
