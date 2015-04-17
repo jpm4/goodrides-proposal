@@ -2,8 +2,9 @@ Goodrides.Views.RidesCollection = Backbone.CompositeView.extend({
   template: JST['rides/collection'],
 
   initialize: function (options) {
+    this.parentView = options.parentView;
     this.missing = options["missing"];
-    this.listenTo(this.collection, 'sync', this.render);
+    this.listenTo(this.collection, 'sync remove', this.render);
   },
 
   render: function () {
@@ -29,7 +30,8 @@ Goodrides.Views.RidesCollection = Backbone.CompositeView.extend({
         normalFill: "silver"
       });
       var wantWidget = new Goodrides.Views.WantWidget({
-        model: ride
+        model: ride,
+        parentView: this
       });
       this.addSubview("#want-button-" + ride.id, wantWidget);
     }.bind(this));

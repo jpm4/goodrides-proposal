@@ -5,13 +5,17 @@ Goodrides.Views.WantWidget = Backbone.View.extend({
     "click" : "toggleWant"
   },
 
-  initialize: function () {
+  initialize: function (options) {
+    this.parentView = options.parentView;
     this.listenTo(this.model, 'change:num_wants', this.render);
   },
 
   toggleWant: function (event) {
     event.preventDefault();
-    this.model.toggleWant();
+    debugger
+    this.model.toggleWant(this.parentView.collection);
+    // Backbone.history.location.hash
+    // this.parentView.collection.remove(this.model);
   },
 
   render: function () {
