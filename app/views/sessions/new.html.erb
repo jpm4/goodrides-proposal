@@ -20,4 +20,11 @@
 
   <input type="submit" value="Log In">
 </form>
+<br>
+<form action="<%= session_url %>" method="post">
+  <%= auth_token_input %>
+  <input type="hidden" name="user[username]" value="Jasmine">
+  <input type="hidden" name="user[password]" value="password">
+  <input type="submit" value="Be Our Guest!">
+</form>
 </body>

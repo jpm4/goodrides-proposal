@@ -77,6 +77,7 @@ u4 = User.create(username: "Mary Poppins", password: "starwars")
 u5 = User.create(username: "Hillary Clinton", password: "starwars")
 u6 = User.create(username: "Jerry Seinfeld", password: "starwars")
 u7 = User.create(username: "Olive Oyl", password: "starwars")
+u8 = User.create(username: "Jasmine", password: "password")
 
 Review.create(user_id: u1.id, ride_id: r1.id, star_rating: 5,
   body: "Favorite this ride is. Ride it you must.")
@@ -104,7 +105,9 @@ Review.create(user_id: u5.id, ride_id: r2.id, star_rating: 5,
  body: "A step in the right direction. Right? ;-)")
 Review.create(user_id: u5.id, ride_id: r3.id, star_rating: 4.5,
  body: "Shoots you up in the air with enough power to shatter any ceiling, glass or not!")
-
+Review.create(user_id: u8.id, ride_id: r11.id, star_rating: 4.5,
+ body: "Surprisingly fun and engaging though not quite on the level of Splash Mountain!")
+ 
 Want.create(user_id: u7.id, ride_id: r3.id)
 Want.create(user_id: u7.id, ride_id: r4.id)
 Want.create(user_id: u5.id, ride_id: r4.id)
