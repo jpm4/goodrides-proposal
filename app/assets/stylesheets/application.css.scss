@@ -17,13 +17,14 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "lavish-bootstrap";
 
 body {
   // background: image-url('sunset_over_cinderella_castle-wallpaper-1920x1080.jpg');
   // background: image-url('219371.jpg');
   margin-top: 70px;
   margin-bottom: 50px;
-  background-color: #CEB09F;
+  // background-color: #CEB09F;
 }
 
 .home {
@@ -63,18 +64,18 @@ img {
 }
 
 .btn-primary {
-  background-color: black;
-  border-color: none;
-  margin-right: 1px;
+  // background-color: black;
+  // border-color: none;
+  // margin-right: 1px;
 }
 
 .want-info:hover {
-  text-decoration: none;
+  // text-decoration: none;
 }
 
 .rides-index-title {
   text-align: center;
-  font-family: tahoma;
+  // font-family: tahoma;
 }
 
 .ride-index-view {
@@ -101,5 +102,5 @@ img {
   margin-bottom: 9px;
   margin-right: 250px;
   margin-left: 5px;
-  background-color: #F5DEB3;
+  background-color: #85758C;
 }
