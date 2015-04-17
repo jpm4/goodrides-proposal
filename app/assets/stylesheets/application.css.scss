@@ -30,6 +30,24 @@ img {
   max-width: 800px;
 }
 
+.container {
+
+}
+
+.sidebar {
+  // float: left;
+}
+
+.rides-display {
+
+
+  // margin-left: 40px;
+  // float: left;
+  // -webkit-column-count: 2;
+  // -moz-column-count: 2;
+  // column-count: 2;
+}
+
 .btn-primary {
   background-color: black;
   border-color: none;
@@ -40,9 +58,21 @@ img {
   text-decoration: none;
 }
 
+.rides-index-title {
+  text-align: center;  
+}
+
+.ride-index-view {
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px;
+  min-width: 350px;
+  margin-left: 35px;
+}
+
 .thumbnail {
-  max-height: 400px;
-  max-width: 300px;
+  height: 275px;
+  width: 400px;
 }
 
 .review-heading {

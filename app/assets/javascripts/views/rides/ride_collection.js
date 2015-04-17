@@ -33,7 +33,5 @@ Goodrides.Views.RidesCollection = Backbone.CompositeView.extend({
       });
       this.addSubview("#want-button-" + ride.id, wantWidget);
     }.bind(this));
-
-
   }
 });

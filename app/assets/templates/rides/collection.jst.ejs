@@ -1,19 +1,23 @@
-<div class='rides-index-title'>
+<div class='rides-index-title col-xs-10'>
   <h3>Rides</h3>
 </div>
 
+<div class='rides-display col-xs-10'>
 <% rides.each(function (ride) { %>
-  <a href="/#/rides/<%= ride.id %>">
-    <div class="ride-index-view">
+
+    <div class="ride-index-view col-xs-5">
+    <a href="/#/rides/<%= ride.id %>">
       <img><img src="<%= ride.escape('image_url') %>"
             alt="<%= ride.escape('name') %>" class="thumbnail"></img>
       <div id="rateYo-mini-<%= ride.escape('id') %>"></div>
       <%= ride.escape("name") %>
-    </a>
-    </div>
+  </a>
     <div id="want-button-<%= ride.escape('id') %>"></div>
+    </div>
+
 <% }); %>
 
 <% if (rides.length == 0) { %>
   <p><%= this.missing %></p>
 <% } %>
+</div>
