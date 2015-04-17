@@ -19,15 +19,29 @@
 @import "bootstrap";
 
 body {
-  margin-top: 75px;
-  margin-bottom: 50px;
   // background: image-url('sunset_over_cinderella_castle-wallpaper-1920x1080.jpg');
-  background-color: #FAEBD7;
+  // background: image-url('219371.jpg');
+  margin-top: 70px;
+  margin-bottom: 50px;
+  background-color: #CEB09F;
+}
+
+.home {
+  background: image-url('man-made-amusement-park_00226613.jpg');
+  color: #CEB09F;
 }
 
 img {
   max-height: 1250px;
   max-width: 800px;
+}
+
+.navbar {
+  border: none;
+}
+
+.login-background {
+
 }
 
 .container {
@@ -74,6 +88,9 @@ img {
 .thumbnail {
   height: 275px;
   width: 400px;
+  padding: 0;
+  border: 0;
+  background-color: none;
 }
 
 .review-heading {
