@@ -19,7 +19,7 @@ Goodrides.Routers.Router = Backbone.Router.extend({
     this.collection.fetch();
     var view = new Goodrides.Views.RidesIndex({
       collection: this.collection,
-      collectionName: "Full Rides Index"
+      collectionName: "All Rides"
     });
 
     this._swapView(view);
