@@ -52,6 +52,24 @@ r8 = Ride.create(
   image_url: "http://25.media.tumblr.com/tumblr_ma52rv1M391r1e3nno1_1280.jpg"
 )
 
+r9 = Ride.create(
+  name: "Walt Disney's Carousel of Progress",
+  description: "Walt Disney's Carousel of Progress is an attraction located at the Magic Kingdom park at the Walt Disney World Resort. Created by both Walt Disney and WED Enterprises as the prime feature of the General Electric (GE) Pavilion for the 1964 New York World's Fair, the attraction was moved to Tomorrowland at Disneyland in Anaheim, California as Carousel of Progress, remaining there from 1967 until 1973. It was replaced in Disneyland by America Sings in 1974, and reopened in its present home in Walt Disney World Resort's Magic Kingdom in 1975.\n\nSteeped in both nostalgia and futurism, the attraction's premise is an exploration of the joys of living through the advent of electricity and other technological advances during the 20th century via a \"typical\" American family. To keep it up with the times, the attraction has been updated five times (in 1967, 1975, 1981, 1985, and 1993) and has had two different theme songs, both written by the Sherman Brothers (Disney's Academy Award-winning songwriting team).\n\nVarious sources say Walt Disney himself proclaimed that the Carousel of Progress was his favorite attraction and that it should never cease operation.",
+  image_url: "http://upload.wikimedia.org/wikipedia/commons/0/06/Carousel_of_Progress_1900.jpg"
+)
+
+r10 = Ride.create(
+  name: "Big Thunder Mountain Railroad",
+  description: "Big Thunder Mountain Railroad is an indoor/outdoor mine train roller coaster located in Frontierland at several Disneyland-style Disney Parks worldwide. The ride exists at Disneyland Park (California) and the Magic Kingdom at Walt Disney World as Big Thunder Mountain Railroad, and at Tokyo Disneyland and Disneyland Park (Paris) as Big Thunder Mountain. Big Thunder Mountain Railroad is also the name of the fictional rail line the roller coaster depicts.",
+  image_url: "http://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Big_Thunder_Mountain_Railroad_2.jpg/1280px-Big_Thunder_Mountain_Railroad_2.jpg"
+)
+
+r11 = Ride.create(
+  name: "Dudley Do-Right's Ripsaw Falls",
+  description: "Dudley Do-Right's Ripsaw Falls is a log flume ride at Islands of Adventure in Orlando, Florida inspired by the Dudley Do-Right character created by cartoonists Jay Ward and Alex Anderson and based on 1999 film. Opened on May 28, 1999, it is one of the park's original attractions.",
+  image_url: "http://f3.fsm.wikidi.com/aq/aa/mu/63206d391c00ba82b5e38f6d140065a78706353c.jpg"
+)
+
 u1 = User.create(username: "Yoda", password: "starwars")
 u2 = User.create(username: "Anton Chigurh", password: "starwars")
 u3 = User.create(username: "Daisy Duck", password: "starwars")
@@ -86,3 +104,14 @@ Review.create(user_id: u5.id, ride_id: r2.id, star_rating: 5,
  body: "A step in the right direction. Right? ;-)")
 Review.create(user_id: u5.id, ride_id: r3.id, star_rating: 4.5,
  body: "Shoots you up in the air with enough power to shatter any ceiling, glass or not!")
+
+Want.create(user_id: u7.id, ride_id: r3.id)
+Want.create(user_id: u7.id, ride_id: r4.id)
+Want.create(user_id: u5.id, ride_id: r4.id)
+Want.create(user_id: u1.id, ride_id: r1.id)
+Want.create(user_id: u6.id, ride_id: r1.id)
+Want.create(user_id: u7.id, ride_id: r1.id)
+Want.create(user_id: u7.id, ride_id: r6.id)
+Want.create(user_id: u5.id, ride_id: r1.id)
+Want.create(user_id: u1.id, ride_id: r2.id)
+Want.create(user_id: u6.id, ride_id: r7.id)
