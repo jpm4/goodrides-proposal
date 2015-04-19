@@ -107,7 +107,7 @@ Review.create(user_id: u5.id, ride_id: r3.id, star_rating: 4.5,
  body: "Shoots you up in the air with enough power to shatter any ceiling, glass or not!")
 Review.create(user_id: u8.id, ride_id: r11.id, star_rating: 4.5,
  body: "Surprisingly fun and engaging though not quite on the level of Splash Mountain!")
- 
+
 Want.create(user_id: u7.id, ride_id: r3.id)
 Want.create(user_id: u7.id, ride_id: r4.id)
 Want.create(user_id: u5.id, ride_id: r4.id)
@@ -118,3 +118,5 @@ Want.create(user_id: u7.id, ride_id: r6.id)
 Want.create(user_id: u5.id, ride_id: r1.id)
 Want.create(user_id: u1.id, ride_id: r2.id)
 Want.create(user_id: u6.id, ride_id: r7.id)
+Want.create(user_id: u7.id, ride_id: r10.id)
+Want.create(user_id: u7.id, ride_id: r11.id)
