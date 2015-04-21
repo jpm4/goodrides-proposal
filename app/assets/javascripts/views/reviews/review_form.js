@@ -94,6 +94,6 @@ Goodrides.Views.ReviewForm = Backbone.CompositeView.extend({
   },
 
   editReview: function () {
-    
+
   }
 });
