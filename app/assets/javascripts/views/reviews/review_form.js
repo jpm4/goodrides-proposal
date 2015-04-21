@@ -5,7 +5,8 @@ Goodrides.Views.ReviewForm = Backbone.CompositeView.extend({
   formShowing: false,
 
   initialize: function (options) {
-    this.rideShowView = options.rideShowView
+    this.rideShowView = options.rideShowView;
+    this.skipStars = options.skipStars;
   },
 
   setStarRating: function (rating) {
@@ -36,7 +37,6 @@ Goodrides.Views.ReviewForm = Backbone.CompositeView.extend({
 
   initializeStarPlugin: function () {
     var renderForm;
-    var firstTime;
 
     if (this.formShowing) {
       renderForm = this.initializeStarPlugin.bind(this);
@@ -63,8 +63,13 @@ Goodrides.Views.ReviewForm = Backbone.CompositeView.extend({
     } else {
       content = this.linkTemplate();
     }
+    if (this.skipStars) {
+      this.editReview();
+    }
     this.$el.html(content);
-    this.initializeStarPlugin();
+    if (!this.skipStars) {
+      this.initializeStarPlugin();
+    }
     this.delegateEvents();
     return this;
   },
@@ -86,5 +91,9 @@ Goodrides.Views.ReviewForm = Backbone.CompositeView.extend({
     }
     this.formShowing = true;
     this.render();
+  },
+
+  editReview: function () {
+    
   }
 });

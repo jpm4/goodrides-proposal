@@ -5,6 +5,8 @@ Goodrides.Views.RideShow = Backbone.CompositeView.extend({
     this.collection = this.model.reviews();
     this.listenTo(this.model, 'sync', this.render);
     this.listenTo(this.collection, 'add', this.addReview);
+    this.listenTo(this.collection, 'remove', this.renderReviews);
+    this.toggle = true;
   },
 
   renderOnRatingSubmit: function () {
@@ -27,7 +29,7 @@ Goodrides.Views.RideShow = Backbone.CompositeView.extend({
     this.renderReviews();
     this.renderWantWidget();
     if (!this.model.attributes.reviewed) {
-      this.renderReviewForm();
+      this.renderReviewForm(false);
     } else {
       this.showUserStars();
     }
@@ -35,40 +37,15 @@ Goodrides.Views.RideShow = Backbone.CompositeView.extend({
     return this;
   },
 
-  averageStarRating: function (newValue, count) {
-    var sum = 0;
-    if (newValue) {
-      sum += newValue;
-    }
-    this.collection.models.forEach (function (review) {
-      sum += review.attributes.star_rating;
-    });
-    return sum / count;
-  },
-
   averageStarDisplay: function (newValue) {
-    var count = this.collection.models.length;
-    var el = "#avgStarDisplay";
-    var rating;
-    if (newValue) {
-      count += 1;
-      this.$(el).remove();
-      el = "#newAvgStarDisplay";
-    }
-    if (count > 0) {
-      rating = this.averageStarRating(newValue, count);
+    this.$("#avgStarDisplay").empty();
 
-      this.$(el).rateYo({
-        rating: rating,
-        readOnly: true,
-        ratedFill: "gold"
-      });
+    var view = new Goodrides.Views.AverageStars({
+      collection: this.collection,
+      newValue: newValue
+    });
 
-      if (rating > 0) {
-        rating = +rating.toFixed(2);
-      }
-      this.$(el).append('<h4>Average Rating: ' + rating + '</h4>');
-    }
+    this.addSubview('#avgStarDisplay', view);
   },
 
   showUserStars: function (rating) {
@@ -77,21 +54,31 @@ Goodrides.Views.RideShow = Backbone.CompositeView.extend({
     }
     this.$("#userStarDisplay").rateYo({
       rating: rating,
-      readOnly: true,
       ratedFill: "red",
-      normalFill: "black"
-    });
+      normalFill: "black",
+      halfStar: true
+    }).on("rateyo.set", function (e, data) {
+      var review = this.collection.findWhere({
+                   user_id: this.model.attributes.current_user
+                   });
+      review.save({ star_rating: data.rating });
+      this.averageStarDisplay(data.rating);
+      // this.collection.remove(review);
+
+    }.bind(this));
     this.$("#userStarDisplay").append('<h4>Your Rating: ' + rating + '</h4>');
   },
 
   renderReviews: function () {
+    this.$('#reviews').empty();
     this.model.reviews().each(this.addReview.bind(this));
   },
 
-  renderReviewForm: function () {
+  renderReviewForm: function (skipStars) {
     var view = new Goodrides.Views.ReviewForm({
       collection: this.collection,
-      rideShowView: this
+      rideShowView: this,
+      skipStars: skipStars
     });
     this.addSubview('#review-form', view);
   },
