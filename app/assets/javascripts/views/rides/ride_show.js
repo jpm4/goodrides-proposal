@@ -64,8 +64,6 @@ Goodrides.Views.RideShow = Backbone.CompositeView.extend({
       review.save({ star_rating: data.rating });
       this.averageStarDisplay(data.rating);
       this.$("#userStarText").html('<h4>Your Rating: ' + data.rating + '</h4>');
-      // this.collection.remove(review);
-
     }.bind(this));
     this.$("#userStarText").html('<h4>Your Rating: ' + rating + '</h4>');
   },

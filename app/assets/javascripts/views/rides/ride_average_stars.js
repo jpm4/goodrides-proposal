@@ -45,7 +45,5 @@ Goodrides.Views.AverageStars = Backbone.CompositeView.extend({
       }
       this.$(el).append('<h4>Average Rating: ' + rating + '</h4>');
     }
-
-    // debugger
   }
 });

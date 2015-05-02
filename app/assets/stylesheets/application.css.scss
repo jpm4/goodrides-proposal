@@ -20,16 +20,24 @@
 @import "lavish-bootstrap";
 
 body {
-  // background: image-url('sunset_over_cinderella_castle-wallpaper-1920x1080.jpg');
-  // background: image-url('219371.jpg');
+  background-color: #CEB09F;
+  background-image: linear-gradient(90deg, rgba(255,255,255,.07) 50%, transparent 50%),
+    linear-gradient(90deg, rgba(255,255,255,.13) 50%, transparent 50%),
+    linear-gradient(90deg, transparent 50%, rgba(255,255,255,.17) 50%),
+    linear-gradient(90deg, transparent 50%, rgba(255,255,255,.19) 50%);
+  background-size: 13px, 29px, 37px, 53px;
   margin-top: 70px;
   margin-bottom: 50px;
-  // background-color: #CEB09F;
 }
 
 .home {
   background: image-url('man-made-amusement-park_00226613.jpg');
-  color: #CEB09F;
+  color: #E0E0E0;
+}
+
+.alert {
+  margin: 10px;
+  padding-right: 20px;
 }
 
 img {

@@ -19,5 +19,3 @@ class Review < ActiveRecord::Base
   belongs_to :user
   belongs_to :ride
 end
-
-# TODO: Enforce star_rating constraint between 1-5 or 0-5

@@ -67,8 +67,6 @@ extra features if time allows.
 [Details][phase-five]
 
 ### Bonus Features (TBD)
-- [ ] Search reviews by keywords
-- [ ] Search rides by type
 - [ ] Group rides by theme park
 - [ ] Create rides not in database
 - [ ] Image gallery for each ride

@@ -53,9 +53,6 @@ Goodrides.Views.ReviewForm = Backbone.CompositeView.extend({
     }.bind(this));
   },
 
-  // TODO: changing score multiple times is doing something that takes up memory,
-  // figure it out
-
   render: function () {
     var content;
     if (this.formShowing) {
@@ -91,9 +88,5 @@ Goodrides.Views.ReviewForm = Backbone.CompositeView.extend({
     }
     this.formShowing = true;
     this.render();
-  },
-
-  editReview: function () {
-
   }
 });
