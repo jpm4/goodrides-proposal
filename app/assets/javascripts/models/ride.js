@@ -14,13 +14,13 @@ Goodrides.Models.Ride = Backbone.Model.extend(
     return this._reviews;
   },
 
-  parse: function (response) {
-    if (response.reviews) {
-      this.reviews().set(response.reviews, { parse: true });
-      delete response.reviews;
+  parse: function (payload) {
+    if (payload.reviews) {
+      this.reviews().set(payload.reviews, { parse: true });
+      delete payload.reviews;
     }
-    this.parseWant(response);
-    return response;
+    this.parseWant(payload);
+    return payload;
   }
 })
 );

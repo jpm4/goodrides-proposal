@@ -20,7 +20,9 @@
 @import "lavish-bootstrap";
 
 body {
-  background-color: #CEB09F;
+  // background-color: lightskyblue;
+  // background-color: mistyrose;
+  background-color: #ceb09f;
   background-image: linear-gradient(90deg, rgba(255,255,255,.07) 50%, transparent 50%),
     linear-gradient(90deg, rgba(255,255,255,.13) 50%, transparent 50%),
     linear-gradient(90deg, transparent 50%, rgba(255,255,255,.17) 50%),
@@ -38,6 +40,11 @@ body {
 .alert {
   margin: 10px;
   padding-right: 20px;
+}
+
+.user {
+  color: dodgerblue;
+  text-align: center;
 }
 
 img {

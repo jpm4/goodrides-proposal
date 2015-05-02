@@ -9,7 +9,3 @@ window.Goodrides = {
     Backbone.history.start();
   }
 };
-
-// $(document).ready(function(){
-//   Goodrides.initialize();
-// });
