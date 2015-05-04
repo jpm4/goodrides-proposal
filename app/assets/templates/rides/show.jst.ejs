@@ -1,15 +1,22 @@
-<h1><%= ride.escape('name') %></h1>
+<h1 class="ride-title col-xs-12"><%= ride.escape('name') %></h1>
 <br>
+<br>
+<br>
+<div class="left-side col-xs-6">
 <img src="<%= ride.escape('image_url') %>" alt="<%= ride.escape('name') %>">
 <br>
 <br>
 <div id="avgStarDisplay"></div>
 <div id="want-view"></div>
 <br>
+<br>
+<p><%= ride.escape('description') %></p>
+</div>
+<div class="right-side col-xs-6">
 <div id="userStarDisplay"></div>
 <div id="userStarText"></div>
 <br>
-<p><%= ride.escape('description') %></p>
+
 
 <div class="reviews-window">
   <div id="review-form">
@@ -17,4 +24,5 @@
 
   <div id="reviews">
   </div>
+</div>
 </div>

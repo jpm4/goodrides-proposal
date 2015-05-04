@@ -32,9 +32,30 @@ body {
   margin-bottom: 50px;
 }
 
+h1 {
+  font-family: "Lucida Console";
+  color: black;
+  font-size: 4em;
+}
+
+p {
+  font-size: 20px;
+  color: black;
+}
+
 .home {
   background: image-url('man-made-amusement-park_00226613.jpg');
   color: #E0E0E0;
+}
+
+.left-side {
+  display: inline-block;
+  overflow: hidden;
+}
+
+.right-side {
+  display: inline-block;
+  overflow: hidden;
 }
 
 .alert {
@@ -43,17 +64,23 @@ body {
 }
 
 .user {
-  color: dodgerblue;
+  color: black;
   text-align: center;
+  font-size: 6em;
 }
 
 img {
-  max-height: 1250px;
-  max-width: 800px;
+  max-height: 400px;
+  // max-width: 400px;
+  max-width: 100%;
 }
 
 .navbar {
   border: none;
+}
+
+.ride-title {
+  text-align: center;
 }
 
 .login-background {
@@ -113,9 +140,10 @@ img {
   border: 1px solid black;
   padding-left: 10px;
   border-radius: 25px;
-  box-shadow: 2px 2px 2px 3px #ccc;
+  box-shadow: 2px 2px 2px 3px black;
   margin-bottom: 9px;
-  margin-right: 250px;
+  margin-right: 10px;
   margin-left: 5px;
-  background-color: #85758C;
+  background-color: white;
+  color: black;
 }
