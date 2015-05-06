@@ -5,7 +5,12 @@ window.Goodrides = {
   Views: {},
   Routers: {},
   initialize: function() {
-    new Goodrides.Routers.Router;
+    var router = new Goodrides.Routers.Router;
+
+    router.on('route', function() {
+      $(document).scrollTop(0);
+    });
+
     Backbone.history.start();
   }
 };
