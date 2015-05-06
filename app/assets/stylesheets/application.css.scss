@@ -17,7 +17,6 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
-@import "lavish-bootstrap";
 
 body {
   // background-color: lightskyblue;
@@ -36,6 +35,11 @@ h1 {
   font-family: "Lucida Console";
   color: black;
   font-size: 4em;
+}
+
+h2 {
+  text-align: center;
+  font-family: tahoma;
 }
 
 p {
@@ -83,6 +87,7 @@ img {
   text-align: center;
 }
 
+
 .login-background {
 
 }
@@ -93,6 +98,11 @@ img {
 
 .sidebar {
   // float: left;
+  position: fixed;
+}
+
+.sidebar-outer {
+  position: relative;
 }
 
 .rides-display {
@@ -113,11 +123,6 @@ img {
 
 .want-info:hover {
   // text-decoration: none;
-}
-
-.rides-index-title {
-  text-align: center;
-  font-family: tahoma;
 }
 
 .ride-index-view {
@@ -146,4 +151,8 @@ img {
   margin-left: 5px;
   background-color: white;
   color: black;
+}
+
+.to-rate {
+  margin-left: 15px;
 }

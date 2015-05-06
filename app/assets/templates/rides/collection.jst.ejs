@@ -1,8 +1,5 @@
-<div class='rides-index-title col-xs-10'>
-  <h2><%= collectionName %></h2>
-</div>
+<h2><%= collectionName %></h2>
 
-<div class='rides-display col-xs-10'>
 <% rides.each(function (ride) { %>
 
     <div class="ride-index-view col-xs-5">
@@ -20,4 +17,3 @@
 <% if (rides.length == 0) { %>
   <p><%= this.missing %></p>
 <% } %>
-</div>
