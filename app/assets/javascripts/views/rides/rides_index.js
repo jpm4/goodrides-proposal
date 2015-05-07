@@ -1,5 +1,5 @@
 Goodrides.Views.RidesIndex = Backbone.CompositeView.extend({
-  template: JST['rides/index'],
+  template: JST['rides/rides_index'],
 
   className: 'rides-index',
 

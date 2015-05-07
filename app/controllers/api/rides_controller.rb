@@ -53,7 +53,7 @@ module Api
       boolean ? reviewed : not_reviewed
     end
 
-    def highest_rated(top = 3)
+    def highest_rated(top = 4)
       sorted = Ride.all.sort_by { |ride| ride.average_rating }
       sorted.last(top)
     end
@@ -67,7 +67,7 @@ module Api
       Ride.all.where("LOWER(rides.name) LIKE LOWER(?)", "%#{query}%")
     end
 
-    def most_wanted(top = 3)
+    def most_wanted(top = 4)
       sorted = Ride.all.sort_by { |ride| ride.wants.size }
       sorted.last(top)
     end

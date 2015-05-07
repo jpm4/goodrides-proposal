@@ -52,6 +52,10 @@ p {
   color: #E0E0E0;
 }
 
+.home-text {
+  color: white;
+}
+
 .left-side {
   display: inline-block;
   overflow: hidden;
@@ -99,6 +103,9 @@ img {
 .sidebar {
   // float: left;
   position: fixed;
+  padding: 8px;
+  border: 2px solid black;
+  border-radius: 25px;
 }
 
 .sidebar-outer {
@@ -165,6 +172,10 @@ img {
   margin-left: 15px
 }
 
+#rateYo {
+  margin-bottom: 5px;
+}
+
 img.missing {
   display: block;
   margin-left: auto;
@@ -173,4 +184,30 @@ img.missing {
 
 .missing {
   text-align: center;
+}
+
+a {
+    display: inline-block;
+    margin: 0 0.2em;
+    padding: 3px;
+    border-radius: 2px;
+    transition: all 0.3s ease-out;
+    /* Font styles */
+    text-decoration: none;
+    font-weight: bold;
+    color: navy;
+}
+
+a:hover {
+    // background: #53A7EA
+    text-decoration: none;
+    color: white;
+}
+
+a:active {
+    // background: #C4E1F8
+}
+
+a:visited {
+    // background: #F2BF97
 }
