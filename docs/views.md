@@ -15,9 +15,6 @@
 ## Ride Show
 ![ride_show]
 
-## User Show
-![user_show]
-
 [landing_page]: ./wireframes/landing_page.JPG
 [bbride_collection]: ./wireframes/bbride_collection.JPG
 [bbreview_show]: ./wireframes/bbreview_show.JPG

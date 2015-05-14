@@ -9,7 +9,6 @@ goodrides is a clone of goodreads built on Rails and Backbone. Users can:
 
 - [x] Create accounts
 - [x] Create sessions (log in)
-- [x] View users
 - [x] View rides
 - [x] Give rides a star rating
 - [x] Display average star rating
@@ -55,7 +54,7 @@ the show pages.
 [Details][phase-three]
 
 ### Phase 4: Searching, User Pages and "Want to Ride" (~2 days)
-I will implement searching for rides by name, clean up user pages and add a tag
+I will implement searching for rides by name and add tags
 for "want to ride".
 
 [Details][phase-four]
