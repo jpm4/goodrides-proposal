@@ -63,8 +63,8 @@ module Api
     end
 
     def search_results
-      query = params[:query].downcase
-      Ride.all.where("LOWER(rides.name) LIKE LOWER(?)", "%#{query}%")
+      query = params[:query].downcase.tr('.', '')
+      Ride.all.where("LOWER(REPLACE(rides.name, '.', '')) LIKE LOWER(?)", "%#{query}%")
     end
 
     def most_wanted(top = 4)
