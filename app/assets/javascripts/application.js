@@ -18,6 +18,7 @@
 //= require backbone
 //= require goodrides
 //= require composite_view
+//= require backbone-fetch-event
 //= require_tree ../templates
 //= require_tree ./utils
 //= require_tree ./models

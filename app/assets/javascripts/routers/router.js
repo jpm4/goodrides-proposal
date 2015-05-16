@@ -2,6 +2,7 @@ Goodrides.Routers.Router = Backbone.Router.extend({
   initialize: function () {
     this.$rootEl = $('#main');
     this.collection = new Goodrides.Collections.Rides();
+    this.collection.new = true;
   },
 
   routes: {
@@ -16,7 +17,11 @@ Goodrides.Routers.Router = Backbone.Router.extend({
   },
 
   ridesIndex: function () {
-    this.collection.fetch();
+    this.collection.fetch({
+      success: function() {
+        this.collection.new = false;
+      }.bind(this)
+    });
     var view = new Goodrides.Views.RidesIndex({
       collection: this.collection,
       collectionName: "All Rides"

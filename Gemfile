@@ -29,6 +29,7 @@ gem 'bcrypt'
 gem 'bootstrap-sass'
 gem 'newrelic_rpm'
 gem 'backbone-on-rails'
+gem 'backbone-fetch-event'
 
 # Use Unicorn as the app server
 # gem 'unicorn'

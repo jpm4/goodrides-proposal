@@ -14,7 +14,7 @@
 
 <% }); %>
 
-<% if (rides.length == 0) { %>
+<% if (rides.length == 0 && !rides.new) { %>
   <div class="missing">
   <p><%= this.missing %></p>
   <img src="http://www.econlife.com/wp-content/uploads/2014/06/mickeysad2.jpg"

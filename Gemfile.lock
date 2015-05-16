@@ -43,6 +43,7 @@ GEM
     autoprefixer-rails (5.1.11)
       execjs
       json
+    backbone-fetch-event (0.0.1)
     backbone-on-rails (1.1.2.1)
       eco
       ejs
@@ -178,6 +179,7 @@ PLATFORMS
 
 DEPENDENCIES
   annotate
+  backbone-fetch-event
   backbone-on-rails
   bcrypt
   better_errors

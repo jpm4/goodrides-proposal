@@ -19,8 +19,6 @@
 @import "bootstrap";
 
 body {
-  // background-color: lightskyblue;
-  // background-color: mistyrose;
   background-color: #ceb09f;
   background-image: linear-gradient(90deg, rgba(255,255,255,.07) 50%, transparent 50%),
     linear-gradient(90deg, rgba(255,255,255,.13) 50%, transparent 50%),
@@ -79,7 +77,6 @@ p {
 
 img {
   max-height: 400px;
-  // max-width: 400px;
   max-width: 100%;
 }
 
@@ -91,17 +88,7 @@ img {
   text-align: center;
 }
 
-
-.login-background {
-
-}
-
-.container {
-
-}
-
 .sidebar {
-  // float: left;
   position: fixed;
   padding: 8px;
   border: 2px solid black;
@@ -110,26 +97,6 @@ img {
 
 .sidebar-outer {
   position: relative;
-}
-
-.rides-display {
-
-
-  // margin-left: 40px;
-  // float: left;
-  // -webkit-column-count: 2;
-  // -moz-column-count: 2;
-  // column-count: 2;
-}
-
-.btn-primary {
-  // background-color: black;
-  // border-color: none;
-  // margin-right: 1px;
-}
-
-.want-info:hover {
-  // text-decoration: none;
 }
 
 .ride-index-view {
@@ -199,15 +166,6 @@ a {
 }
 
 a:hover {
-    // background: #53A7EA
     text-decoration: none;
     color: white;
-}
-
-a:active {
-    // background: #C4E1F8
-}
-
-a:visited {
-    // background: #F2BF97
 }
