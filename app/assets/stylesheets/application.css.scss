@@ -20,7 +20,8 @@
 
 @font-face {
     font-family: "Waltograph";
-    src: url(/assets/waltograph42.otf) format("opentype");
+    src: font-url('waltograph42.otf');
+    // src: url(/assets/waltograph42.otf) format("opentype");
 }
 
 body {
