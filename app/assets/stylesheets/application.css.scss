@@ -18,6 +18,11 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+@font-face {
+    font-family: "Waltograph";
+    src: url(/assets/waltograph42.otf) format("opentype");
+}
+
 body {
   background-color: #ceb09f;
   background-image: linear-gradient(90deg, rgba(255,255,255,.07) 50%, transparent 50%),
@@ -30,14 +35,15 @@ body {
 }
 
 h1 {
-  font-family: "Lucida Console";
+  font-family: "Waltograph";
   color: black;
   font-size: 4em;
 }
 
 h2 {
   text-align: center;
-  font-family: tahoma;
+  font-family: "Waltograph";
+  font-size: 4em;
 }
 
 p {
