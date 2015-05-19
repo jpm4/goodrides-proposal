@@ -70,6 +70,12 @@ r11 = Ride.create(
   image_url: "http://f3.fsm.wikidi.com/aq/aa/mu/63206d391c00ba82b5e38f6d140065a78706353c.jpg"
 )
 
+r12 = Ride.create(
+  name: "Radiator Springs Racers",
+  description: "Radiator Springs Racers is a simulated slot car type dark ride attraction in Cars Land at Disney California Adventure. The attraction features a third-generation version of transport technology originally developed for the Test Track attraction at Epcot in Walt Disney World. Radiator Springs Racers is themed to the fictional world in Disney·Pixar's Cars. At a cost of over $200 million, the attraction is the most expensive at Disneyland Resort and one of the most expensive theme park attractions in the world. It accounted for about 18% of the entire cost of the $1.1 billion expansion of Disney California Adventure Park. The attraction takes guests in a six-person vehicle through encounters with characters from the film Cars. Guests then race another vehicle through turns and hills, ending with a randomized race result.",
+  image_url: "http://i.imgur.com/2jBuMJV.jpg"
+)
+
 u1 = User.create(username: "Yoda", password: "starwars")
 u2 = User.create(username: "Anton Chigurh", password: "starwars")
 u3 = User.create(username: "Daisy Duck", password: "starwars")
