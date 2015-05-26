@@ -1,8 +1,8 @@
 # goodrides
 
-[Heroku link][heroku]
+[Live Link][live]
 
-[heroku]: https://goodrides.herokuapp.com/
+[live]: http://goodrides.io
 
 ## Minimum Viable Product
 goodrides is a clone of goodreads built on Rails and Backbone. Users can:
