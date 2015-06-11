@@ -1,7 +1,8 @@
 Goodrides.Views.RideShow = Backbone.CompositeView.extend({
   template: JST['rides/show'],
 
-  initialize: function () {
+  initialize: function (options) {
+    this.ridesCollection = options.ridesCollection;
     this.collection = this.model.reviews();
     this.listenTo(this.model, 'sync', this.render);
     this.listenTo(this.collection, 'add', this.addReview);
@@ -34,15 +35,18 @@ Goodrides.Views.RideShow = Backbone.CompositeView.extend({
       this.showUserStars();
     }
     this.averageStarDisplay();
+    this.renderTweets();
     return this;
   },
 
   averageStarDisplay: function (newValue) {
     this.$("#avgStarDisplay").empty();
-
     var view = new Goodrides.Views.AverageStars({
       collection: this.collection,
-      newValue: newValue
+      newValue: newValue,
+      userRating: this.model.attributes.user_rating,
+      model: this.model,
+      average: this.model.attributes.average_rating
     });
 
     this.addSubview('#avgStarDisplay', view);
@@ -50,7 +54,7 @@ Goodrides.Views.RideShow = Backbone.CompositeView.extend({
 
   showUserStars: function (rating) {
     if (!rating) {
-      var rating = this.model.attributes.user_rating;
+      rating = this.model.attributes.user_rating;
     }
     this.$("#userStarDisplay").rateYo({
       rating: rating,
@@ -61,8 +65,9 @@ Goodrides.Views.RideShow = Backbone.CompositeView.extend({
       var review = this.collection.findWhere({
                    user_id: this.model.attributes.current_user
                    });
-      review.save({ star_rating: data.rating });
-      this.averageStarDisplay(data.rating);
+      var ride = this.model;
+      review.save({ star_rating: data.rating }, { success: function() {
+            ride.fetch(); }} );
       this.$("#userStarText").html('<h4>Your Rating: ' + data.rating + '</h4>');
     }.bind(this));
     this.$("#userStarText").html('<h4>Your Rating: ' + rating + '</h4>');
@@ -77,7 +82,8 @@ Goodrides.Views.RideShow = Backbone.CompositeView.extend({
     var view = new Goodrides.Views.ReviewForm({
       collection: this.collection,
       rideShowView: this,
-      skipStars: skipStars
+      skipStars: skipStars,
+      ride: this.model
     });
     this.addSubview('#review-form', view);
   },
@@ -87,5 +93,12 @@ Goodrides.Views.RideShow = Backbone.CompositeView.extend({
       model: this.model
     });
     this.addSubview('#want-view', view);
+  },
+
+  renderTweets: function () {
+    var view = new Goodrides.Views.Tweets({
+      model: this.model
+    });
+    this.addSubview('#tweets', view);
   }
 });

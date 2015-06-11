@@ -161,18 +161,30 @@ img.missing {
 }
 
 a {
-    display: inline-block;
-    margin: 0 0.2em;
-    padding: 3px;
-    border-radius: 2px;
-    transition: all 0.3s ease-out;
-    /* Font styles */
-    text-decoration: none;
-    font-weight: bold;
-    color: navy;
+  display: inline-block;
+  margin: 0 0.2em;
+  padding: 3px;
+  border-radius: 2px;
+  transition: all 0.3s ease-out;
+  /* Font styles */
+  text-decoration: none;
+  font-weight: bold;
+  color: navy;
 }
 
 a:hover {
-    text-decoration: none;
-    color: white;
+  text-decoration: none;
+  color: white;
+}
+
+#tweets {
+  border: 1px solid black;
+  padding: 3px;
+  color: white;
+  background-color: black;
+}
+
+#tweets p {
+  color: white;
+  border: 1px dotted white;
 }

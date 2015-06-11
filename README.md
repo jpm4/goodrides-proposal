@@ -72,11 +72,10 @@ extra features if time allows.
 - [ ] Pagination/infinite scroll
 - [ ] Activity history
 - [ ] User avatars
-- [ ] Recent Tweets on ride show pages
+- [x] Recent Tweets on ride show pages
 - [ ] Quotes
 - [ ] Typeahead search bar
 - [ ] Show rides on map
-- [ ] Minor bug when setting review score to 0
 
 [phase-one]: ./docs/phases/phase1.md
 [phase-two]: ./docs/phases/phase2.md

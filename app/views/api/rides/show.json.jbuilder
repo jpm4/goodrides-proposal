@@ -2,7 +2,10 @@ json.partial! "api/rides/ride", ride: @ride, wants_hash: @wants_hash
 
 json.(@reviewed, :reviewed)
 json.(@user_rating, :user_rating)
+
 json.current_user current_user.id
+
+json.tweets @tweets
 
 json.reviews @ride.reviews do |review|
   json.id review.id

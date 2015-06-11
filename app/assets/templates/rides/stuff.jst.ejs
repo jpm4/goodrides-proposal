@@ -1,0 +1,7 @@
+<h3>What People are Tweeting:</h3>
+
+<% if (twitters) { %>
+  <% twitters.forEach(function (tweet) { %>
+    <p><%= tweet %></p>
+  <% }); %>
+<% } %>

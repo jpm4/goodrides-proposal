@@ -87,7 +87,8 @@ Goodrides.Routers.Router = Backbone.Router.extend({
     var ride = this.collection.getOrFetch(id);
 
     var view = new Goodrides.Views.RideShow({
-      model: ride
+      model: ride,
+      ridesCollection: this.collection
     });
 
     this._swapView(view);
