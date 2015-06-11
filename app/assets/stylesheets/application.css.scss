@@ -95,19 +95,21 @@ img {
 }
 
 .sidebar {
-  position: fixed;
+  // position: fixed;
   padding: 8px;
   border: 2px solid black;
   border-radius: 25px;
+  overflow: hidden;
 }
 
 .sidebar-outer {
-  position: relative;
+  // position: relative;
 }
 
 .ride-index-view {
-  display: inline-block;
-  overflow: hidden;
+  position: relative;
+  // display: inline-block;
+  // overflow: hidden;
   padding: 10px;
   min-width: 350px;
   margin-left: 35px;
@@ -131,6 +133,7 @@ img {
   margin-left: 5px;
   background-color: white;
   color: black;
+  overflow: hidden;
 }
 
 .to-rate {
@@ -176,12 +179,6 @@ a:hover {
   color: white;
 }
 
-// #tweets {
-//   border: 1px solid black;
-//   padding: 3px;
-//   background-color: white;
-// }
-
 #tweets {
   font-family: "Helvetica Neue", Roboto, "Segoe UI", Calibri, sans-serif;
   font-size: 12px;
@@ -206,4 +203,5 @@ a:hover {
   border-width: 1px;
   padding: 2px;
   background-color: white;
+  overflow: hidden;
 }
