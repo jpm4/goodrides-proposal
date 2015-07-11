@@ -13,6 +13,7 @@
 
 class Review < ActiveRecord::Base
   validates :user_id, :ride_id, presence: true
+  validates :user_id, uniqueness: {scope: :ride_id}
   validates :star_rating, numericality: {
     greater_than_or_equal_to: 0, less_than_or_equal_to: 5 }
 
