@@ -26,7 +26,7 @@ r3 = Ride.create(
 r4 = Ride.create(
   name: "Kingda Ka",
   description: "Kingda Ka is a steel accelerator roller coaster located at Six Flags Great Adventure in Jackson, New Jersey, United States. It is the world's tallest roller coaster, the world's second fastest roller coaster, and was the second strata coaster ever built.\n\nThe train is launched by a hydraulic launch mechanism to 128 miles per hour (206 km/h) in 3.5 seconds. At the end of the launch track, the train climbs the main top hat tower, reaching a height of 456 feet (139 m) and spanning over a 3,118-foot-long (950 m) track by the end of the ride.",
-  image_url: "http://kingdaka.net/wp-content/uploads/2014/08/kingda-kagreatadventure.jpg")
+  image_url: "http://i.imgur.com/cboV1xo.jpg")
 
 r5 = Ride.create(
   name: "Pirates of the Caribbean",
